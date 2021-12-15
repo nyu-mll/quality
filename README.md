@@ -62,6 +62,6 @@ As discussed, the value of `questions` is a list of dictionaries. Each dictionar
 
 The annotations for questions in the test set will not be released. The authors are currently working on a leaderboard. Stay tuned!
 
-### Contact
+## Contact
 
 {yzpang, alicia.v.parrish}@nyu.edu
