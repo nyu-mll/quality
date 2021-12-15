@@ -5,7 +5,7 @@
 
 ## Data link
 
-Download [QuALITY](https://github.com/nyu-mll/quality/raw/main/data/QuALITY.v1.1.zip) (zip).
+Download [QuALITY v0.9](https://github.com/nyu-mll/quality/raw/main/data/QuALITY.v0.9.zip) (zip).
 
 ## Paper preprint
 
