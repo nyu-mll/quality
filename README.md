@@ -1,9 +1,9 @@
 # QuALITY: Question Answering with Long Input Texts, Yes!
 
-*Authors*: Richard Yuanzhe Pang*, Alicia Parrish*, Nitish Joshi*, Nikita Nangia, Jason Phang, Angelica Chen, Vishakh Padmakumar, Johnny Ma, Jana Thompson, He He, and Samuel R. Bowman
+**Authors**: Richard Yuanzhe Pang*, Alicia Parrish*, Nitish Joshi*, Nikita Nangia, Jason Phang, Angelica Chen, Vishakh Padmakumar, Johnny Ma, Jana Thompson, He He, and Samuel R. Bowman
 (* = equal contribution)
 
-*Contact*: {yzpang, alicia.v.parrish}@nyu.edu
+**Contact**: {yzpang, alicia.v.parrish}@nyu.edu
 
 ## Data link
 
