@@ -1,11 +1,11 @@
 # QuALITY: Question Answering with Long Input Texts, Yes!
 
-**Authors**: Richard Yuanzhe Pang*, Alicia Parrish*, Nitish Joshi*, Nikita Nangia, Jason Phang, Angelica Chen, Vishakh Padmakumar, Johnny Ma, Jana Thompson, He He, and Samuel R. Bowman
+**Authors**: Richard Yuanzhe Pang,* Alicia Parrish,* Nitish Joshi*, Nikita Nangia, Jason Phang, Angelica Chen, Vishakh Padmakumar, Johnny Ma, Jana Thompson, He He, and Samuel R. Bowman
 (* = equal contribution)
 
 ## Data link
 
-You can access the dataset in the `data` folder. 
+Download [QuALITY](https://github.com/nyu-mll/quality/raw/main/data/QuALITY.v1.1.zip) (zip).
 
 ## Paper preprint
 
@@ -48,7 +48,7 @@ As discussed, the value of `questions` is a list of dictionaries. Each dictionar
 - `speed_validation`: A list of dictionaries containing the speed validation results. Each dictionary contains the following fields.
     - `speed_annotator_id`: The anonymized annotator IDs corresponding to the speed annotation results shown in `speed_answer`.
     - `speed_answer`: The responses in the speed validation. Each question is annotated by five workers.
-- `difficult`: A binary value. `1` means that less than 50% of the speed annotations answer the question correctly, so we include this question in the `hard` subset. Otherwise, the value is `0`.
+- `difficult`: A binary value. `1` means that less than 50% of the speed annotations answer the question correctly, so we include this question in the `hard` subset. Otherwise, the value is `0`. In our evaluations, we report one accuracy figure for the entire dataset, and a second for the `difficult=1` subset.
 
 ### Validation criteria for the questions
 - More than 50% of annotators answer the question correctly in the untimed setting. That is, more than 50% of the `untimed_answer` annotations agree with `gold_label` (defined as the majority vote of validators' annotations together with the writer's provided label).
@@ -61,11 +61,11 @@ As discussed, the value of `questions` is a list of dictionaries. Each dictionar
 
 ### Test set
 
-The annotations for questions in the test set will not be released. The authors are currently working on a leaderboard. Stay tuned!
+The annotations for questions in the test set will not be released. We are currently working on a leaderboard. Stay tuned for an update by early January!
 
 ## Code
 
-The code for our baseline models will be released soon. Stay tuned!
+The code for our baseline models will be released soon. Stay tuned for an update by early January!
 
 ## Contact
 
