@@ -1,8 +1,17 @@
 # QuALITY: Question Answering with Long Input Texts, Yes!
 
+*Authors*: Richard Yuanzhe Pang*, Alicia Parrish*, Nitish Joshi*, Nikita Nangia, Jason Phang, Angelica Chen, Vishakh Padmakumar, Johnny Ma, Jana Thompson, He He, and Samuel R. Bowman
+(* = equal contribution)
+
+*Contact*: {yzpang, alicia.v.parrish}@nyu.edu
+
 ## Data link
 
-Please find the dataset [here](https://drive.google.com/drive/folders/1VjWjnD1SIVh3JmEEZ31M47svdEwttb5k?usp=sharing). 
+You can access the dataset [here](https://drive.google.com/drive/folders/1VjWjnD1SIVh3JmEEZ31M47svdEwttb5k?usp=sharing). 
+
+## Paper preprint
+
+You can read the paper [insert paper link]().
 
 ## Data README
 
@@ -47,7 +56,7 @@ As discussed, the value of `questions` is a list of dictionaries. Each dictionar
 - More than 50% of annotators think that the question is unambiguous and answerable. That is, more than 50% of the `untimed_eval1_answerability` annotations have `1`'s.
 
 
-### <a name="clean+difficult">What are the `hard` questions?</a>
+### <a name="difficult">What are the `hard` questions?</a>
  - More than 50% of annotators answer the question correctly in the untimed setting. That is, more than 50% of the `untimed_answer` annotations agree with `gold_label`.
  - More than 50% of annotators think that the question is unambiguous and answerable. That is, more than 50% of the `untimed_eval1_answerability` annotations have `1`'s.
  - More than 50% of annotators answer the question incorrectly in the speed validaiton setting. That is, more than 50% of the `speed_answer` annotations are incorrect.
