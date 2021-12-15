@@ -5,7 +5,7 @@
 
 ## Data link
 
-You can access the dataset [here](https://drive.google.com/drive/folders/1VjWjnD1SIVh3JmEEZ31M47svdEwttb5k?usp=sharing). 
+You can access the dataset in the `data` folder. 
 
 ## Paper preprint
 
@@ -23,6 +23,7 @@ Here are the explanations to the fields in the jsonl file. Each json line corres
 - `author`: String. The author of the article.
 - `topic`: String. The topic of the article.
 - `url`: String. The URL of the original unprocessed source article. 
+- `license`: String. The license information for the article. 
 - `article`: String. The HTML of the article. A script that converts HTML to plain texts is provided. 
 - `questions`: A list of dictionaries explained below. Each line of json has a different number of questions because some questions were removed following validation.
 
