@@ -67,6 +67,17 @@ The annotations for questions in the test set will not be released. We are curre
 
 The code for our baseline models will be released soon. Stay tuned for an update by early January!
 
+## Citation
+
+```
+@article{pang2021quality,
+  title={{QuALITY}: Question Answering with Long Input Texts, Yes!},
+  author={Pang, Richard Yuanzhe and Parrish, Alicia and Joshi, Nitish and Nangia, Nikita and Phang, Jason and Chen, Angelica and Padmakumar, Vishakh and Ma, Johnny and Thompson, Jana and He, He and Bowman, Samuel R.},
+  journal={arXiv preprint arXiv:2112.08608},
+  year={2021}
+}
+```
+
 ## Contact
 
 {yzpang, alicia.v.parrish}@nyu.edu
