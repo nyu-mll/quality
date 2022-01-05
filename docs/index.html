@@ -1,1 +1,326 @@
-Test
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@qi2peng2">
+    <meta name="twitter:creator" content="@qi2peng2">
+    <meta name="twitter:title" content="QuALITY: Question Answering with Long Input Text, Yes!">
+    <meta name="twitter:description" content="QuALITY is a multiple-choice question answering dataset with context passages in English that have an average length of about 5,000 tokens.">
+
+    <title>QuALITY Leaderboard</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+    <link href="css/quality.css" rel="stylesheet">
+    
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org/",
+  "@type":"Dataset",
+  "name":"QuALITY",
+  "description":"Question answering with long input text, yes!",
+  "url":"https://nyu-mll.github.io/quality/",
+  "keywords":[
+     "Natural Language Processing",
+     "Question Answering",
+  ],
+  "creator":{
+     "@type":"Organization",
+     "url": "https://nyu-mll.github.io/quality/",
+     "name":"New York University",
+     "contactPoint":{
+        "@type":"ContactPoint",
+        "contactType": "customer service",
+        "url":"https://yzpang.me/",
+        "email":"yzpang@nyu.edu"
+     }
+  },
+}
+</script>
+    
+
+  </head>
+
+  <body>
+<!-- <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="index.html"></a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+      </ul>
+    </div>
+  </div>
+</nav> -->
+<!-- Page Header -->
+<header class="masthead" style="background-color:tomato;">
+<!-- <header class="masthead" style="background-image: url('img/home-bg.jpeg')">
+ -->  <div class="overlay"></div>
+  <div class="topleft"> <img id="mypic" src="img/read-white.png" alt="" class="img-responsive" object-fit="scale-down" style="position:absolute; left:5%; top:10%;" /> </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="site-heading">
+          <h1>QuALITY</h1>
+          <span class="subheading">Question Answering with Long Input Texts, Yes!</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+
+
+
+
+
+
+
+<!-- Main Content -->
+<div class="container" id="main">
+  <div class="row">
+    <div class="col-lg-3">
+      <div class="list-group">
+        <div class="list-group-item">
+        <p>QuALITY is a multiple-choice question answering dataset with context passages in English that have an average length of about 5,000 tokens. QuALITY is distributed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/" style="text-decoration: none;">CC BY 4.0 License</a>. The dataset can be downloaded from the repo <a href="https://github.com/nyu-mll/quality" style="text-decoration: none;">here</a>. For more details about QuALITY, please refer to the paper: <a href="https://arxiv.org/pdf/2112.08608.pdf" style="text-decoration: none;">Pang et al. (2021)</a>.</p>
+        <p class="text-center">
+          
+        </p>
+        </div>
+        <div class="list-group-item">
+          <!-- <h4>Submission</h4> -->
+
+        For submission instructions, please refer to <a href="https://github.com/nyu-mll/quality" style="text-decoration: none;">this page</a>.</p>
+        </div>
+        <div class="list-group-item">
+        <pre>
+@article{pang2021quality,
+  title={{QuALITY}: Question Answering with Long Input Texts, Yes!},
+  author={Pang, Richard Yuanzhe and Parrish, Alicia and Joshi, Nitish and Nangia, Nikita and Phang, Jason and Chen, Angelica and Padmakumar, Vishakh and Ma, Johnny and Thompson, Jana and He, He and Bowman, Samuel R.},
+  journal={arXiv preprint arXiv:2112.08608},
+  year={2021}
+}</pre>
+    </div>
+  </div>
+</div>
+<div class="col-lg-8">
+  <div class="card card-outline-secondary">
+    <div class="card-header">
+      Leaderboard
+    </div>
+    <div class="card-body">
+      WARNING (January 5, 2022): THE LEADERBOARD IS STILL UNDER CONSTRUCTION. Rankings are determined by the accuracy on the entire test set.
+      <br><br>
+      <table class="table table-responsive">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col" rowspan=2></th>
+            <th scope="col" rowspan=2 class="align-middle text-center">Model name</th>
+            <th scope="col" rowspan=2 class="align-middle text-center"></th>
+            <th scope="col" rowspan=2 class="align-middle text-center">Paper</th>
+            <th scope="col" rowspan=2 class="align-middle text-center">Code</th>
+            <th scope="col" colspan=2 class='text-center'>Accuracy</th>
+          </tr>
+          <tr>
+            <th scope="col" class='text-center'>Test set</th>
+            <th scope="col" class='text-center'>Hard subset</th>
+          </tr>
+        </thead>
+<tbody><tr style="background:#f4f4f4">
+    <td scope="row" class='align-middle text-center'>0<br>
+      <span class="badge badge-secondary">2021/12</span></td>
+    <td class='align-middle text-left'>Human annotators<br/>
+      <span class="affiliation">New York University</span><br/></td>
+    <td class='align-middle text-center'><button data-id="000008" type="submit" class="display-description";>description</button></td>
+    <td class='align-middle text-center'><a href="https://arxiv.org/pdf/2112.08608.pdf"><i class="far fa-file-alt" style="color:#32CD32"></i></a></td>
+    <td class='align-middle text-center'></td>
+    <td class='align-middle text-center'><strong>93.5</strong></td>
+    <td class='align-middle text-center'><strong>89.1</strong></td>
+</tr>
+<tr id="000008"style="display:none;" class="section" >
+<td colspan="7" style="font-size:13px"> Model description: We estimate human accuracy on QuALITY on a random sample of 20 passages (367 questions). Each question is annotated by 3 new validation annotators who had not previously annotated that passage, and whose labels do not contribute to the assignment of the gold label. See paper for details.</td>
+</tr></tbody>
+
+<tbody><tr style="background:#f4f4f4">
+    <td scope="row" class='align-middle text-center'>1<br>
+      <span class="badge badge-secondary">2021/12</span></td>
+    <td class='align-middle text-left'>Baseline model: DeBERTaV3-large with DPR-based extraction, with intermediate training on RACE<br/>
+      <span class="affiliation">New York University</span><br/></td>
+    <td class='align-middle text-center'><button data-id="000005" type="submit" class="display-description";>description</button></td>
+    <td class='align-middle text-center'><a href="https://arxiv.org/pdf/2112.08608.pdf"><i class="far fa-file-alt" style="color:#32CD32"></i></a></td>
+    <td class='align-middle text-center'><a href="https://github.com/nyu-mll/quality"><i class="fas fa-code" style="color:#32CD32"></i></a></td>
+    <td class='align-middle text-center'><strong>55.4</strong></td>
+    <td class='align-middle text-center'><strong>46.1</strong></td>
+</tr>
+<tr id="000005"style="display:none;" class="section" >
+<td colspan="7" style="font-size:13px"> Model description: We use DeBERTaV3-large and first do intermediate training on RACE; then we fine-tune the model on QuALITY. For fine-tuning, we use the similarity (based on DPR) between each source sentence and the question to select shorter contexts to feed into the QA model. See paper for details.</td>
+</tr></tbody>
+
+<tbody><tr style="background:#f4f4f4">
+    <td scope="row" class='align-middle text-center'>2<br>
+      <span class="badge badge-secondary">2021/12</span></td>
+    <td class='align-middle text-left'>Baseline model: DeBERTaV3-large with DPR-based extraction<br/>
+      <span class="affiliation">New York University</span><br/></td>
+    <td class='align-middle text-center'><button data-id="000004" type="submit" class="display-description";>description</button></td>
+    <td class='align-middle text-center'><a href="https://arxiv.org/pdf/2112.08608.pdf"><i class="far fa-file-alt" style="color:#32CD32"></i></a></td>
+    <td class='align-middle text-center'><a href="https://github.com/nyu-mll/quality"><i class="fas fa-code" style="color:#32CD32"></i></a></td>
+    <td class='align-middle text-center'><strong>49.0</strong></td>
+    <td class='align-middle text-center'><strong>41.2</strong></td>
+</tr>
+<tr id="000004"style="display:none;" class="section" >
+<td colspan="7" style="font-size:13px"> Model description: We fine-tune DeBERTa-V3-large on QuALITY. We use the similarity (based on DPR) between each source sentence and the question to select shorter contexts to feed into the QA model. See paper for details.</td>
+</tr></tbody>
+
+<tbody><tr style="background:#f4f4f4">
+    <td scope="row" class='align-middle text-center'>3<br>
+      <span class="badge badge-secondary">2021/12</span></td>
+    <td class='align-middle text-left'>Baseline model: RoBERTa-large with DPR-based extraction, with intermediate training on RACE<br/>
+      <span class="affiliation">New York University</span><br/></td>
+    <td class='align-middle text-center'><button data-id="000003" type="submit" class="display-description";>description</button></td>
+    <td class='align-middle text-center'><a href="https://arxiv.org/pdf/2112.08608.pdf"><i class="far fa-file-alt" style="color:#32CD32"></i></a></td>
+    <td class='align-middle text-center'><a href="https://github.com/nyu-mll/quality"><i class="fas fa-code" style="color:#32CD32"></i></a></td>
+    <td class='align-middle text-center'><strong>48.7</strong></td>
+    <td class='align-middle text-center'><strong>40.2</strong></td>
+</tr>
+<tr id="000003"style="display:none;" class="section" >
+<td colspan="7" style="font-size:13px"> Model description: We use RoBERTa-large and first do intermediate training on RACE; then we fine-tune the model on QuALITY. For fine-tuning, we use the similarity (based on DPR) between each source sentence and the question to select shorter contexts to feed into the QA model. See paper for details.</td>
+</tr></tbody>
+
+<tbody><tr style="background:#f4f4f4">
+    <td scope="row" class='align-middle text-center'>4<br>
+      <span class="badge badge-secondary">2021/12</span></td>
+    <td class='align-middle text-left'>Question-only baseline: DeBERTaV3-large, with intermediate training on RACE<br/>
+      <span class="affiliation">New York University</span><br/></td>
+    <td class='align-middle text-center'><button data-id="000007" type="submit" class="display-description";>description</button></td>
+    <td class='align-middle text-center'><a href="https://arxiv.org/pdf/2112.08608.pdf"><i class="far fa-file-alt" style="color:#32CD32"></i></a></td>
+    <td class='align-middle text-center'><a href="https://github.com/nyu-mll/quality"><i class="fas fa-code" style="color:#32CD32"></i></a></td>
+    <td class='align-middle text-center'><strong>43.3</strong></td>
+    <td class='align-middle text-center'><strong>38.2</strong></td>
+</tr>
+<tr id="000007"style="display:none;" class="section" >
+<td colspan="7" style="font-size:13px"> Model description: We use DeBERTaV3-large and first do intermediate training on RACE; then we fine-tune the model on QuALITY. For fine-tuning the input only consists of the questions and options (so, no articles).</td>
+</tr></tbody>
+
+<tbody><tr style="background:#f4f4f4">
+    <td scope="row" class='align-middle text-center'>5<br>
+      <span class="badge badge-secondary">2021/12</span></td>
+    <td class='align-middle text-left'>Baseline model: RoBERTa-large with fastText-based extraction<br/>
+      <span class="affiliation">New York University</span><br/></td>
+    <td class='align-middle text-center'><button data-id="000002" type="submit" class="display-description";>description</button></td>
+    <td class='align-middle text-center'><a href="https://arxiv.org/pdf/2112.08608.pdf"><i class="far fa-file-alt" style="color:#32CD32"></i></a></td>
+    <td class='align-middle text-center'><a href="https://github.com/nyu-mll/quality"><i class="fas fa-code" style="color:#32CD32"></i></a></td>
+    <td class='align-middle text-center'><strong>42.7</strong></td>
+    <td class='align-middle text-center'><strong>35.7</strong></td>
+</tr>
+<tr id="000002"style="display:none;" class="section" >
+<td colspan="7" style="font-size:13px"> Model description: We fine-tune RoBERTa-large on QuALITY. We use the similarity (based on fastText) between each source sentence and the question to select shorter contexts to feed into the QA model. See paper for details.</td>
+</tr></tbody>
+
+<tbody><tr style="background:#f4f4f4">
+    <td scope="row" class='align-middle text-center'>6<br>
+      <span class="badge badge-secondary">2021/12</span></td>
+    <td class='align-middle text-left'>Question-only baseline: DeBERTaV3-large<br/>
+      <span class="affiliation">New York University</span><br/></td>
+    <td class='align-middle text-center'><button data-id="000006" type="submit" class="display-description";>description</button></td>
+    <td class='align-middle text-center'><a href="https://arxiv.org/pdf/2112.08608.pdf"><i class="far fa-file-alt" style="color:#32CD32"></i></a></td>
+    <td class='align-middle text-center'><a href="https://github.com/nyu-mll/quality"><i class="fas fa-code" style="color:#32CD32"></i></a></td>
+    <td class='align-middle text-center'><strong>39.7</strong></td>
+    <td class='align-middle text-center'><strong>35.2</strong></td>
+</tr>
+<tr id="000006"style="display:none;" class="section" >
+<td colspan="7" style="font-size:13px"> Model description: We fine-tune DeBERTa-V3-large on QuALITY but the input only consists of the questions and options (so, no articles).</td>
+</tr></tbody>
+
+<tbody><tr style="background:#f4f4f4">
+    <td scope="row" class='align-middle text-center'>7<br>
+      <span class="badge badge-secondary">2021/12</span></td>
+    <td class='align-middle text-left'>Baseline model: Longformer, with intermediate training on RACE<br/>
+      <span class="affiliation">New York University</span><br/></td>
+    <td class='align-middle text-center'><button data-id="000001" type="submit" class="display-description";>description</button></td>
+    <td class='align-middle text-center'><a href="https://arxiv.org/pdf/2112.08608.pdf"><i class="far fa-file-alt" style="color:#32CD32"></i></a></td>
+    <td class='align-middle text-center'><a href="https://github.com/nyu-mll/quality"><i class="fas fa-code" style="color:#32CD32"></i></a></td>
+    <td class='align-middle text-center'><strong>39.5</strong></td>
+    <td class='align-middle text-center'><strong>35.3</strong></td>
+</tr>
+<tr id="000001"style="display:none;" class="section" >
+<td colspan="7" style="font-size:13px"> Model description: We first do intermediate training using a pretrained Longformer (which supports up to 4,096 tokens) on RACE. Then, we fine-tune the model on QuALITY. See paper for details.</td>
+</tr></tbody>
+
+<tbody><tr style="background:#f4f4f4">
+    <td scope="row" class='align-middle text-center'>8<br>
+      <span class="badge badge-secondary">2021/12</span></td>
+    <td class='align-middle text-left'>Baseline model: Longformer<br/>
+      <span class="affiliation">New York University</span><br/></td>
+    <td class='align-middle text-center'><button data-id="000000" type="submit" class="display-description";>description</button></td>
+    <td class='align-middle text-center'><a href="https://arxiv.org/pdf/2112.08608.pdf"><i class="far fa-file-alt" style="color:#32CD32"></i></a></td>
+    <td class='align-middle text-center'><a href="https://github.com/nyu-mll/quality"><i class="fas fa-code" style="color:#32CD32"></i></a></td>
+    <td class='align-middle text-center'><strong>30.7</strong></td>
+    <td class='align-middle text-center'><strong>29.3</strong></td>
+</tr>
+<tr id="000000"style="display:none;" class="section" >
+<td colspan="7" style="font-size:13px"> Model description: We fine-tune a pretrained Longformer which supports up to 4,096 tokens, on QuALITY. See paper for details.</td>
+</tr></tbody>
+
+
+          <script>
+              $('.display-description').on("click", function () {
+                $(this).parents('tr').next().toggle();
+              });
+          </script>
+
+
+      </table>
+    </div>
+  </div>
+  </div>
+</div>
+</div>
+
+
+
+    <hr>
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <p class="copyright text-muted">Copyright &copy; QuALITY Team, 2022.</p>
+            <p class="copyright text-muted">The homepage is adapted from <a href="https://beerqa.github.io/" style="text-decoration: none;">BeerQA</a> and <a href="https://hotpotqa.github.io/" style="text-decoration: none;">HotpotQA</a> (with permission) which are in turn adapted from Start Bootstrap's <a href="https://startbootstrap.com/template-overviews/clean-blog/" style="text-decoration: none;">Clean Blog</a> template.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script>$(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    })</script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/clean-blog.min.js"></script>
+    
+
+  </body>
+
+</html>
