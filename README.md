@@ -3,6 +3,11 @@
 **Authors**: Richard Yuanzhe Pang,* Alicia Parrish,* Nitish Joshi,* Nikita Nangia, Jason Phang, Angelica Chen, Vishakh Padmakumar, Johnny Ma, Jana Thompson, He He, and Samuel R. Bowman
 (* = equal contribution)
 
+## UPDATE
+
+- [The leaderboard](https://nyu-mll.github.io/quality/) is up! Please expect minor changes in the next few weeks.
+
+
 ## Data link
 
 Download [QuALITY v0.9](https://github.com/nyu-mll/quality/raw/main/data/QuALITY.v0.9.zip) (zip).
@@ -10,6 +15,10 @@ Download [QuALITY v0.9](https://github.com/nyu-mll/quality/raw/main/data/QuALITY
 ## Paper preprint
 
 You can read the paper [here](https://github.com/nyu-mll/quality/blob/main/quality_preprint.pdf).
+
+## Leaderboard
+
+https://nyu-mll.github.io/quality/
 
 ## Data README
 
