@@ -44,7 +44,9 @@ If it is infeasible for you to submit through the Google form, then please send 
 - Given that we have made sure each of the four options has a roughly 25% chance of being the gold answer, we will measure the model performance by accuracy only. Two accuracy numbers will be computed: the accuracy on the entire test set and the accuracy on the hard subset of the test set. 
 
 2. Can I make an anonymous submission to the leaderboard?
-- Anonymous submissions will be displayed on the leaderboard only if (1) the submitter submits a link to a reasonably detailed and possibly anonymized paper which is publicly accessible (e.g., on OpenReview), and (2) the submitter indicates that the submitter is an author of the paper. 
+- Yes, but please try not to do so unless necessary. 
+
+<!-- Anonymous submissions will be displayed on the leaderboard only if (1) the submitter submits a link to a reasonably detailed and possibly anonymized paper which is publicly accessible (e.g., on OpenReview), and (2) the submitter indicates that the submitter is an author of the paper.  -->
 
 3. When will my results appear on the leaderboard?
 - Assuming your submission is eligible for the leaderboard, we will try to update the leaderboard within a week, and often much more promptly. 
