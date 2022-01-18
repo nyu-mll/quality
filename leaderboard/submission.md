@@ -1,6 +1,6 @@
 # Submission to the QuALITY Leaderboard
 
-Last updated: 01/06/2022
+Last updated: 01/16/2022
 
 
 ## What to submit
@@ -10,8 +10,10 @@ Last updated: 01/06/2022
 2. [Required] Contact email, and whether you want to make it public.
 
 3. [Required] Prediction file. 
-- Format: The file should contain 2128 lines. Each line corresponds to one question. Each line is composed of the question id (e.g., `52845_75VB1ISR_1`), a comma, and the prediction (e.g., `3`). The prediction is 1-indexed, so the first option corresponds to `1` and the fourth option corresponds to `4`.
-- Example line: `52845_75VB1ISR_1,3`
+- Format: The file should contain 2128 lines. Each line corresponds to one question. Each line is composed of the question id (e.g., `52845_75VB1ISR_1`), a comma, and the prediction (e.g., `3`). The prediction is 1-indexed, so the first option corresponds to `1` and the fourth option corresponds to `4`. 
+  - You can also abstain from making a prediction, by writing `-1` as the option. 
+- Example line: `52845_75VB1ISR_1,3` or `20001_G5VZ19S0_1,-1`
+- We will report both the accuracy and the SAT-style score which penalizes incorrect predictions (see FAQ section). 
 
 4. [Required] Short model description. This information will appear on the front page of the leaderboard.
 - Example: "RoBERTa-large with DPR-based extraction, with intermediate training on RACE"
@@ -41,7 +43,8 @@ If it is infeasible for you to submit through the Google form, then please send 
 ## FAQ
 
 1. What evaluation metrics will be used?
-- Given that we have made sure each of the four options has a roughly 25% chance of being the gold answer, we will measure the model performance by accuracy only. Two accuracy numbers will be computed: the accuracy on the entire test set and the accuracy on the hard subset of the test set. 
+- We will measure the model performance by accuracy only. Two accuracy numbers will be computed: the accuracy on the entire test set and the accuracy on the hard subset of the test set. 
+- We will also report the SAT-style score which penalizes incorrect predictions. The score equals (number of correct answers - (1/3) * number of incorrect answers + 0 * number of abstained answers) / (number of examples). A set of random predictions would receive a score close to 0. Therefore, if your model is very uncertain on an example, it would be best to abstain according to this metric.
 
 2. Can I make an anonymous submission to the leaderboard?
 - Yes, but please try not to do so unless necessary. 
