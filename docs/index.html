@@ -122,14 +122,17 @@
     </div>
   </div>
 </div>
-<div class="col-lg-8">
+<div class="col-lg-9">
   <div class="card card-outline-secondary">
     <div class="card-header">
       Leaderboard
     </div>
     <div class="card-body">
-      Rankings are determined by the accuracy on the entire test set.
-      <br><br>
+      <ul>
+      <li> Rankings are determined by the accuracy on the entire test set. </li>
+      <li> Accuracy = (number of correct answers) / (num of examples). 
+      <li> SAT-style score = (number of correct answers - (1/3) * number of incorrect answers + 0 * number of abstained answers) / (number of examples). </li>
+      </ul>
       <table class="table table-responsive">
         <thead class="thead-light">
           <tr>
@@ -139,8 +142,11 @@
             <th scope="col" rowspan=2 class="align-middle text-center">Paper</th>
             <th scope="col" rowspan=2 class="align-middle text-center">Code</th>
             <th scope="col" colspan=2 class='text-center'>Accuracy</th>
+            <th scope="col" colspan=2 class='text-center'>SAT-style score</th>
           </tr>
           <tr>
+            <th scope="col" class='text-center'>Test set</th>
+            <th scope="col" class='text-center'>Hard subset</th>
             <th scope="col" class='text-center'>Test set</th>
             <th scope="col" class='text-center'>Hard subset</th>
           </tr>
@@ -155,6 +161,8 @@
     <td class='align-middle text-center'></td>
     <td class='align-middle text-center'><strong>93.5</strong></td>
     <td class='align-middle text-center'><strong>89.1</strong></td>
+    <td class='align-middle text-center'><strong>91.4</strong></td>
+    <td class='align-middle text-center'><strong>85.4</strong></td>
 </tr>
 <tr id="000008" style="display:none;" class="section" >
 <td colspan="7" style="font-size:13px"> Model description: We estimate human accuracy on QuALITY on a random sample of 20 passages (367 questions). Each question is annotated by 3 new validation annotators who had not previously annotated that passage, and whose labels do not contribute to the assignment of the gold label. See paper for details.</td>
@@ -170,6 +178,8 @@
     <td class='align-middle text-center'><a href="https://github.com/nyu-mll/quality"><i class="fas fa-code" style="color:#32CD32"></i></a></td>
     <td class='align-middle text-center'><strong>55.4</strong></td>
     <td class='align-middle text-center'><strong>46.1</strong></td>
+    <td class='align-middle text-center'><strong>40.5</strong></td>
+    <td class='align-middle text-center'><strong>28.1</strong></td>
 </tr>
 <tr id="000005" style="display:none;" class="section" >
 <td colspan="7" style="font-size:13px"> Model description: We use DeBERTaV3-large and first do intermediate training on RACE; then we fine-tune the model on QuALITY. For fine-tuning, we use the similarity (based on DPR) between each source sentence and the question to select shorter contexts to feed into the QA model. See paper for details.</td>
@@ -185,6 +195,8 @@
     <td class='align-middle text-center'><a href="https://github.com/nyu-mll/quality"><i class="fas fa-code" style="color:#32CD32"></i></a></td>
     <td class='align-middle text-center'><strong>51.4</strong></td>
     <td class='align-middle text-center'><strong>44.7</strong></td>
+    <td class='align-middle text-center'><strong>35.2</strong></td>
+    <td class='align-middle text-center'><strong>26.3</strong></td>
 </tr>
 <tr id="000003" style="display:none;" class="section" >
 <td colspan="7" style="font-size:13px"> Model description: We use RoBERTa-large and first do intermediate training on RACE; then we fine-tune the model on QuALITY. For fine-tuning, we use the similarity (based on DPR) between each source sentence and the question to select shorter contexts to feed into the QA model. See paper for details.</td>
@@ -200,6 +212,8 @@
     <td class='align-middle text-center'><a href="https://github.com/nyu-mll/quality"><i class="fas fa-code" style="color:#32CD32"></i></a></td>
     <td class='align-middle text-center'><strong>49.0</strong></td>
     <td class='align-middle text-center'><strong>41.2</strong></td>
+    <td class='align-middle text-center'><strong>32.0</strong></td>
+    <td class='align-middle text-center'><strong>21.6</strong></td>
 </tr>
 <tr id="000004" style="display:none;" class="section" >
 <td colspan="7" style="font-size:13px"> Model description: We fine-tune DeBERTa-V3-large on QuALITY. We use the similarity (based on DPR) between each source sentence and the question to select shorter contexts to feed into the QA model. See paper for details.</td>
@@ -215,6 +229,8 @@
     <td class='align-middle text-center'><a href="https://github.com/nyu-mll/quality"><i class="fas fa-code" style="color:#32CD32"></i></a></td>
     <td class='align-middle text-center'><strong>43.3</strong></td>
     <td class='align-middle text-center'><strong>38.2</strong></td>
+    <td class='align-middle text-center'><strong>24.4</strong></td>
+    <td class='align-middle text-center'><strong>17.6</strong></td>
 </tr>
 <tr id="000007" style="display:none;" class="section" >
 <td colspan="7" style="font-size:13px"> Model description: We use DeBERTaV3-large and first do intermediate training on RACE; then we fine-tune the model on QuALITY. For fine-tuning the input only consists of the questions and options (so, no articles).</td>
@@ -230,6 +246,8 @@
     <td class='align-middle text-center'><a href="https://github.com/nyu-mll/quality"><i class="fas fa-code" style="color:#32CD32"></i></a></td>
     <td class='align-middle text-center'><strong>42.7</strong></td>
     <td class='align-middle text-center'><strong>35.7</strong></td>
+    <td class='align-middle text-center'><strong>23.6</strong></td>
+    <td class='align-middle text-center'><strong>14.3</strong></td>
 </tr>
 <tr id="000002" style="display:none;" class="section" >
 <td colspan="7" style="font-size:13px"> Model description: We fine-tune RoBERTa-large on QuALITY. We use the similarity (based on fastText) between each source sentence and the question to select shorter contexts to feed into the QA model. See paper for details.</td>
@@ -245,6 +263,8 @@
     <td class='align-middle text-center'><a href="https://github.com/nyu-mll/quality"><i class="fas fa-code" style="color:#32CD32"></i></a></td>
     <td class='align-middle text-center'><strong>39.7</strong></td>
     <td class='align-middle text-center'><strong>35.2</strong></td>
+    <td class='align-middle text-center'><strong>19.6</strong></td>
+    <td class='align-middle text-center'><strong>13.5</strong></td>
 </tr>
 <tr id="000006" style="display:none;" class="section" >
 <td colspan="7" style="font-size:13px"> Model description: We fine-tune DeBERTa-V3-large on QuALITY but the input only consists of the questions and options (so, no articles).</td>
@@ -260,6 +280,8 @@
     <td class='align-middle text-center'><a href="https://github.com/nyu-mll/quality"><i class="fas fa-code" style="color:#32CD32"></i></a></td>
     <td class='align-middle text-center'><strong>39.5</strong></td>
     <td class='align-middle text-center'><strong>35.3</strong></td>
+    <td class='align-middle text-center'><strong>19.4</strong></td>
+    <td class='align-middle text-center'><strong>13.8</strong></td>
 </tr>
 <tr id="000001" style="display:none;" class="section" >
 <td colspan="7" style="font-size:13px"> Model description: We first do intermediate training using a pretrained Longformer (which supports up to 4,096 tokens) on RACE. Then, we fine-tune the model on QuALITY. See paper for details.</td>
@@ -275,12 +297,12 @@
     <td class='align-middle text-center'><a href="https://github.com/nyu-mll/quality"><i class="fas fa-code" style="color:#32CD32"></i></a></td>
     <td class='align-middle text-center'><strong>30.7</strong></td>
     <td class='align-middle text-center'><strong>29.3</strong></td>
+    <td class='align-middle text-center'><strong>7.6</strong></td>
+    <td class='align-middle text-center'><strong>5.7</strong></td>
 </tr>
 <tr id="000000" style="display:none;" class="section" >
 <td colspan="7" style="font-size:13px"> Model description: We fine-tune a pretrained Longformer which supports up to 4,096 tokens, on QuALITY. See paper for details.</td>
 </tr></tbody>
-
-
 
           <script>
               $('.display-description').on("click", function () {
