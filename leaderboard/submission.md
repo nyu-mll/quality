@@ -1,6 +1,6 @@
 # Submission to the QuALITY Leaderboard
 
-Last updated: 01/16/2022
+Last updated: 01/17/2022
 
 
 ## What to submit
@@ -43,7 +43,7 @@ If it is infeasible for you to submit through the Google form, then please send 
 ## FAQ
 
 1. What evaluation metrics will be used?
-- We will measure the model performance by accuracy only. Two accuracy numbers will be computed: the accuracy on the entire test set and the accuracy on the hard subset of the test set. 
+- We will measure the model performance by accuracy. Two accuracy numbers will be computed: the accuracy on the entire test set and the accuracy on the hard subset of the test set. 
 - We will also report the SAT-style score which penalizes incorrect predictions. The score equals (number of correct answers - (1/3) * number of incorrect answers + 0 * number of abstained answers) / (number of examples). A set of random predictions would receive a score close to 0. Therefore, if your model is very uncertain on an example, it would be best to abstain according to this metric.
 
 2. Can I make an anonymous submission to the leaderboard?
