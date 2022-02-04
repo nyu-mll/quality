@@ -74,7 +74,7 @@ The annotations for questions in the test set will not be released. We are curre
 
 ## Code
 
-The code for our baseline models will be released soon. Stay tuned for an update by early January!
+The code for our baseline models will be released soon. Stay tuned!
 
 ## Citation
 
