@@ -70,7 +70,7 @@ As discussed, the value of `questions` is a list of dictionaries. Each dictionar
 
 ### Test set
 
-The annotations for questions in the test set will not be released. We are currently working on a leaderboard. Stay tuned for an update by early January!
+The annotations for questions in the test set will not be released. [The leaderboard](https://nyu-mll.github.io/quality/) is up. Please submit!
 
 ## Code
 
