@@ -1,6 +1,6 @@
 # QuALITY Baselines
 
-Mostly written by [Jason Phang](https://github.com/zphang/lrqa).
+Written by [Jason Phang](https://github.com/zphang/lrqa).
 
 ## Overview
 
