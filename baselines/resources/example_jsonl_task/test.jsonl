@@ -1,0 +1,2 @@
+{"context": "The dog ate the bone.", "query": " Who ate the bone?", "option_0": " The dog.", "option_1": " The cat.", "option_2": " The bird.", "label":  0}
+{"context": "\"So foul and fair a day I have not seen.\"", "query": " What play is this from?", "option_0": " The Tempest.", "option_1": " Macbeth.", "option_2": " Hamilton.", "label":  1}
