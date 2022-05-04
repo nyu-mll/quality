@@ -5,7 +5,7 @@
 
 ## UPDATE
 
-- [The leaderboard](https://nyu-mll.github.io/quality/) is up! Please expect minor changes in the next few weeks.
+- [The leaderboard](https://nyu-mll.github.io/quality/) is up! 
 
 
 ## Data link
@@ -74,7 +74,7 @@ The annotations for questions in the test set will not be released. [The leaderb
 
 ## Code
 
-The code for our baseline models will be released soon. Stay tuned!
+The code for our baseline models is in `baselines`.
 
 ## Citation
 
