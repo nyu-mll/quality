@@ -174,23 +174,40 @@
 
 <tbody><tr style="background:#f4f4f4">
     <td scope="row" class='align-middle text-center'>1<br>
+      <span class="badge badge-secondary">2022/05</span></td>
+    <td class='align-middle text-left'>CoLISA: DPR & DeBERTaV3-large architecture plus contrastive learning & in-sample attention<br/>
+      <span class="affiliation">Anonymous (temporary)</span><br/></td>
+    <td class='align-middle text-center'><button data-id="000010" type="submit" class="display-description";>description</button></td>
+    <td class='align-middle text-center'></td>
+    <td class='align-middle text-center'></td>
+    <td class='align-middle text-center'><strong>62.3</strong></td>
+    <td class='align-middle text-center'><strong>54.7</strong></td>
+    <td class='align-middle text-center'><strong>49.7</strong></td>
+    <td class='align-middle text-center'><strong>39.6</strong></td>
+</tr>
+<tr id="000010" style="display:none;" class="section" >
+<td colspan="7" style="font-size:13px"> Model description: We extract a short context from the original passage by DPR (using questions and options). Then we successively fine-tune a multiple-choice model on RACE and QuALITY. Besides, we introduce contrastive learning method and in-sample attention mechanism within each sample to better distinguish the answers from the distractors. External data/resources: We use the off-the-shelf DPR retriever to extract the short contexts from original articles. And we use the pre-trained DeBERTaV3-large model on Hugging Face. Besides, RACE is introduced into our first stage of fine tuning the model.</td>
+</tr></tbody>
+
+<tbody><tr style="background:#f4f4f4">
+    <td scope="row" class='align-middle text-center'>2<br>
       <span class="badge badge-secondary">2022/04</span></td>
-    <td class='align-middle text-left'>DPR retrieval using questions+options & DeBERTaV3-large with intermediate training on RACE and contrastive learning on QuALITY<br/>
-      <span class="affiliation">Mengxing Dong, SUDA NLP (HY) & I2R, Soochow University</span><br/></td>
+    <td class='align-middle text-left'>CoLISA: DPR & DeBERTaV3-large architecture & contrastive learning<br/>
+      <span class="affiliation">Anonymous (temporary)</span><br/></td>
     <td class='align-middle text-center'><button data-id="000009" type="submit" class="display-description";>description</button></td>
     <td class='align-middle text-center'></td>
     <td class='align-middle text-center'></td>
     <td class='align-middle text-center'><strong>62.1</strong></td>
     <td class='align-middle text-center'><strong>54.3</strong></td>
-    <td class='align-middle text-center'><strong>49.4</strong></td>
+    <td class='align-middle text-center'><strong>49.5</strong></td>
     <td class='align-middle text-center'><strong>39.1</strong></td>
 </tr>
 <tr id="000009" style="display:none;" class="section" >
-<td colspan="7" style="font-size:13px"> Model description: First, we extract a short context from the original article by respectively regarding the question and four options as queries based on a pretrained DPR model. Meanwhile, we fine-tune a multiple choice model on RACE. Then we feed the shorter context and relating inputs to the model on QuALITY; we introduce several contrastive learning methods to distinguish the representation of each sequence; here we use an unsupervised means.</td>
+<td colspan="7" style="font-size:13px"> Model description: We extract a short context from the original passage by DPR (using questions and options). Then we successively fine-tune a multiple-choice model on RACE and QuALITY. Besides, we introduce contrastive learning method within each sample to better distinguish the answers from the distractors. External data/resources: We use the off-the-shelf DPR retriever to extract the short contexts from original articles. And we use the pre-trained DeBERTaV3-large model on Hugging Face. Besides, RACE is introduced into our first stage of fine tuning the model.</td>
 </tr></tbody>
 
 <tbody><tr style="background:#f4f4f4">
-    <td scope="row" class='align-middle text-center'>2<br>
+    <td scope="row" class='align-middle text-center'>3<br>
       <span class="badge badge-secondary">2021/12</span></td>
     <td class='align-middle text-left'>Baseline model: DPR retrieval using questions & DeBERTaV3-large with intermediate training on RACE<br/>
       <span class="affiliation">New York University</span><br/></td>
@@ -207,7 +224,7 @@
 </tr></tbody>
 
 <tbody><tr style="background:#f4f4f4">
-    <td scope="row" class='align-middle text-center'>3<br>
+    <td scope="row" class='align-middle text-center'>4<br>
       <span class="badge badge-secondary">2021/12</span></td>
     <td class='align-middle text-left'>Baseline model: DPR retrieval using questions & RoBERTa-large with intermediate training on RACE<br/>
       <span class="affiliation">New York University</span><br/></td>
@@ -224,7 +241,7 @@
 </tr></tbody>
 
 <tbody><tr style="background:#f4f4f4">
-    <td scope="row" class='align-middle text-center'>4<br>
+    <td scope="row" class='align-middle text-center'>5<br>
       <span class="badge badge-secondary">2021/12</span></td>
     <td class='align-middle text-left'>Baseline model: DPR retrieval using questions & DeBERTaV3-large <br/>
       <span class="affiliation">New York University</span><br/></td>
@@ -241,7 +258,7 @@
 </tr></tbody>
 
 <tbody><tr style="background:#f4f4f4">
-    <td scope="row" class='align-middle text-center'>5<br>
+    <td scope="row" class='align-middle text-center'>6<br>
       <span class="badge badge-secondary">2021/12</span></td>
     <td class='align-middle text-left'>Question-only baseline: DeBERTaV3-large with intermediate training on RACE<br/>
       <span class="affiliation">New York University</span><br/></td>
@@ -258,7 +275,7 @@
 </tr></tbody>
 
 <tbody><tr style="background:#f4f4f4">
-    <td scope="row" class='align-middle text-center'>6<br>
+    <td scope="row" class='align-middle text-center'>7<br>
       <span class="badge badge-secondary">2021/12</span></td>
     <td class='align-middle text-left'>Baseline model: fastText retrieval using questions & RoBERTa-large<br/>
       <span class="affiliation">New York University</span><br/></td>
@@ -275,7 +292,7 @@
 </tr></tbody>
 
 <tbody><tr style="background:#f4f4f4">
-    <td scope="row" class='align-middle text-center'>7<br>
+    <td scope="row" class='align-middle text-center'>8<br>
       <span class="badge badge-secondary">2021/12</span></td>
     <td class='align-middle text-left'>Question-only baseline: DeBERTaV3-large<br/>
       <span class="affiliation">New York University</span><br/></td>
@@ -292,7 +309,7 @@
 </tr></tbody>
 
 <tbody><tr style="background:#f4f4f4">
-    <td scope="row" class='align-middle text-center'>8<br>
+    <td scope="row" class='align-middle text-center'>9<br>
       <span class="badge badge-secondary">2021/12</span></td>
     <td class='align-middle text-left'>Baseline model: Longformer with intermediate training on RACE<br/>
       <span class="affiliation">New York University</span><br/></td>
@@ -309,7 +326,7 @@
 </tr></tbody>
 
 <tbody><tr style="background:#f4f4f4">
-    <td scope="row" class='align-middle text-center'>9<br>
+    <td scope="row" class='align-middle text-center'>10<br>
       <span class="badge badge-secondary">2021/12</span></td>
     <td class='align-middle text-left'>Baseline model: Longformer<br/>
       <span class="affiliation">New York University</span><br/></td>
