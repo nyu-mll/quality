@@ -5,7 +5,7 @@
 
 ## UPDATE
 
-- [The leaderboard](https://nyu-mll.github.io/quality/) is up! 
+- [March 2022] [The leaderboard](https://nyu-mll.github.io/quality/) is up! 
 
 
 ## Data link
