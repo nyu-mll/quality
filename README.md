@@ -12,9 +12,9 @@
 
 Download [QuALITY v0.9](https://github.com/nyu-mll/quality/raw/main/data/QuALITY.v0.9.zip) (zip).
 
-## Paper preprint
+## Paper
 
-You can read the paper [here](https://github.com/nyu-mll/quality/blob/main/quality_preprint.pdf).
+You can read the paper [here](https://arxiv.org/pdf/2112.08608.pdf).
 
 ## Leaderboard
 
