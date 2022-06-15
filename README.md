@@ -11,7 +11,7 @@
 
 ## Data link
 
-Download [QuALITY v1.0](https://github.com/nyu-mll/quality/raw/main/data/v1.0/QuALITY.v1.0.zip) (zip).
+Download [QuALITY v1.0](https://github.com/nyu-mll/quality/raw/main/data/v1.0).
 
 ## Paper
 
