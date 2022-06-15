@@ -5,12 +5,13 @@
 
 ## UPDATE
 
+- [June 2022] Releasing QuALITY-v1.0. The `QuALITY.v1.0.[train/dev/test]` files are the same as `QuALITY.v0.9.[train/dev/test]`. We fixed a small HTML-stripping issue ([link](#log)), so the `QuALITY.v1.0.htmlstripped.[train/dev/test]` files are slightly different from `QuALITY.v1.0.htmlstripped.[train/dev/test]`. 
 - [March 2022] [The leaderboard](https://nyu-mll.github.io/quality/) is up! 
 
 
 ## Data link
 
-Download [QuALITY v0.9](https://github.com/nyu-mll/quality/raw/main/data/QuALITY.v0.9.zip) (zip).
+Download [QuALITY v1.0](https://github.com/nyu-mll/quality/raw/main/data/v1.0/QuALITY.v1.0.zip) (zip).
 
 ## Paper
 
@@ -75,6 +76,10 @@ The annotations for questions in the test set will not be released. [The leaderb
 ## Code
 
 The code for our baseline models is in `baselines`.
+
+## Log
+
+- June 2022: Our NAACL paper relies on QuALITY-v0.9. We discovered an issue in the HTML stripping script. When there is a piece of string like `Belgian<br/>politics` in the original article, the stripped version would become `Belgianpolitics` instead of `Belgian politics`. This issue affects around 15% of the examples (or around 0.6% of the tokens) in the HTML-stripped files of v0.9. The original HTML-formatted data remain unchanged, so QuALITY.v1.0.[train/dev/test] is the same as QuALITY.v0.9.[train/dev/test]. In QuALITY-v1.0.htmlstripped.[train/dev/test], we fixed the issue caused by the `<br/>` tag.
 
 ## Acknowledgments
 
