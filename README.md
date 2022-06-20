@@ -79,7 +79,7 @@ The code for our baseline models is in `baselines`.
 
 ## Log
 
-- June 2022: Our NAACL paper relies on QuALITY-v0.9. We discovered an issue in the HTML stripping script. When there is a piece of string like `Belgian<br/>politics` in the original article, the stripped version would become `Belgianpolitics` instead of `Belgian politics`. This issue affects around 15% of the examples (or around 0.6% of the tokens) in the HTML-stripped files of v0.9. The original HTML-formatted data remain unchanged, so QuALITY.v1.0.[train/dev/test] is the same as QuALITY.v0.9.[train/dev/test]. In QuALITY-v1.0.htmlstripped.[train/dev/test], we fixed the issue caused by the `<br/>` tag.
+- June 2022: Our NAACL paper relies on QuALITY-v0.9. We discovered an issue in the HTML stripping script. When there is a piece of string like `Belgian<br/>politics` in the original article, the stripped version would become `Belgianpolitics` instead of `Belgian politics`. This issue affects around 15% of the examples (or around 0.5% of the tokens) in the HTML-stripped files of v0.9. The original HTML-formatted data remain unchanged, so `QuALITY.v1.0.[train/dev/test]` is the same as `QuALITY.v0.9.[train/dev/test]`. In `QuALITY-v1.0.htmlstripped.[train/dev/test]`, we fixed the issue caused by the `<br/>` tag.
 
 ## Acknowledgments
 
