@@ -5,13 +5,17 @@
 
 ## UPDATE
 
-- [June 2022] Releasing QuALITY-v1.0. The `QuALITY.v1.0.[train/dev/test]` files are the same as `QuALITY.v0.9.[train/dev/test]`. We fixed a small HTML-stripping issue ([details](#log)), so the `QuALITY.v1.0.htmlstripped.[train/dev/test]` files are slightly different from `QuALITY.v0.9.htmlstripped.[train/dev/test]`. 
+- [June 2022] Releasing QuALITY-v1.0 (minor update: see [release notes](#release-notes)).
 - [March 2022] [The leaderboard](https://nyu-mll.github.io/quality/) is up! 
 
 
 ## Data link
 
 Download [QuALITY v1.0](https://github.com/nyu-mll/quality/raw/main/data/v1.0).
+
+### Release notes
+
+- [QuALITY-v1.0] The `QuALITY.v1.0.[train/dev/test]` files are the same as `QuALITY.v0.9.[train/dev/test]`. We fixed a small HTML-stripping issue ([details](#log)), so the `QuALITY.v1.0.htmlstripped.[train/dev/test]` files are slightly different from `QuALITY.v0.9.htmlstripped.[train/dev/test]`. 
 
 ## Paper
 
