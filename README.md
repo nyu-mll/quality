@@ -15,7 +15,8 @@ Download [QuALITY v1.0](https://github.com/nyu-mll/quality/raw/main/data/v1.0).
 
 ### Release notes
 
-- [QuALITY-v1.0] The `QuALITY.v1.0.[train/dev/test]` files are the same as `QuALITY.v0.9.[train/dev/test]`. We fixed a small HTML-stripping issue ([details](#log)), so the `QuALITY.v1.0.htmlstripped.[train/dev/test]` files are slightly different from `QuALITY.v0.9.htmlstripped.[train/dev/test]`. 
+- [QuALITY-v1.0.1] Minor update. The `QuALITY.v1.0.1.[train/dev/test]` files are the same as `QuALITY.v0.9.[train/dev/test]` and `QuALITY.v1.0.[train/dev/test]`. The HTML-stripped files `QuALITY.v1.0.1.htmlstripped.[train/dev/test]` are slightly different from `QuALITY.v1.0.htmlstripped.[train/dev/test]`. We find that different articles may use different HTML tags to do paragraph or line breaks. So whenever `</p> <p>` or `</p><p>` or `<br/> <br/>` or `<br/><br/>` appears, we replace such tags with line breaks as well in the HTML-stripped files. 
+- [QuALITY-v1.0] Minor update. The `QuALITY.v1.0.[train/dev/test]` files are the same as `QuALITY.v0.9.[train/dev/test]`. We fixed a small HTML-stripping issue ([details](#log)), so the `QuALITY.v1.0.htmlstripped.[train/dev/test]` files are slightly different from `QuALITY.v0.9.htmlstripped.[train/dev/test]`. 
 
 ## Paper
 
