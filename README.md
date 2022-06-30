@@ -5,13 +5,14 @@
 
 ## UPDATE
 
-- [June 2022] Releasing QuALITY-v1.0 (minor update: see [release notes](#release-notes)).
+- [June 2022] Releasing QuALITY-v1.0.1 (minor update from v1.0: see [release notes](#release-notes)).
+- [June 2022] Releasing QuALITY-v1.0 (minor update from v0.9: see [release notes](#release-notes)).
 - [March 2022] [The leaderboard](https://nyu-mll.github.io/quality/) is up! 
 
 
 ## Data link
 
-Download [QuALITY v1.0](https://github.com/nyu-mll/quality/raw/main/data/v1.0).
+Download [QuALITY v1.0.1](https://github.com/nyu-mll/quality/blob/main/data/v1.0.1/QuALITY.v1.0.1.zip).
 
 ### Release notes
 
