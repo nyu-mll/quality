@@ -1,16 +1,77 @@
 from typing import Iterable
 import torch
+import json
 from rouge_score import rouge_scorer
 import spacy
-import pyutils.io as io
-import pyutils.display as display
 from bs4 import BeautifulSoup
 import numpy as np
 import nltk
 import transformers
-import lrqa.preproc.simple as simple
 import torch.nn.functional as F
+from tqdm import auto as tqdm_lib
 
+
+def tqdm(iterable=None, desc=None, total=None, initial=0):
+    return tqdm_lib.tqdm(
+        iterable=iterable,
+        desc=desc,
+        total=total,
+        initial=initial,
+    )
+
+def maybe_tqdm(iterable=None, desc=None, total=None, initial=0, verbose=True):
+    if verbose:
+        return tqdm(iterable=iterable, desc=desc, total=total, initial=initial)
+    else:
+        return iterable
+
+def read_jsonl(path):
+    # Manually open because .splitlines is different from iterating over lines
+    ls = []
+    with open(path, "r") as f:
+        for line in f:
+            ls.append(json.loads(line))
+    return ls
+
+def write_file(data, path, mode="w", **kwargs):
+    with open(path, mode=mode, **kwargs) as f:
+        f.write(data)
+
+def write_jsonl(data, path):
+    assert isinstance(data, list)
+    lines = [
+        to_jsonl(elem)
+        for elem in data
+    ]
+    write_file("\n".join(lines), path)
+
+def to_jsonl(data):
+    return json.dumps(data).replace("\n", "")
+
+def get_clean_text(str_obj):
+    if str_obj is None:
+        return ""
+    return " ".join(str(str_obj).strip().split())
+
+def format_nice_text(raw_html):
+    soup = BeautifulSoup(raw_html, "html.parser")
+    p_list = soup.findAll('p')
+    if len(p_list) == 0:
+        # Fall-back for if we have no <p> tags to work off
+        return " ".join(soup.get_text().strip().split())
+    else:
+        text_list = []
+        header = get_clean_text(p_list[0].prev_sibling)
+        if header:
+            text_list.append(header)
+        for p_elem in p_list:
+            clean_p_text = get_clean_text(p_elem.get_text())
+            if clean_p_text:
+                text_list.append(clean_p_text)
+            clean_p_suffix = get_clean_text(p_elem.next_sibling)
+            if clean_p_suffix:
+                text_list.append(clean_p_suffix)
+        return "\n\n".join(text_list)
 
 class SimpleScorer:
     def __init__(self, metrics=(("rouge1", "r"),), use_stemmer=True):
@@ -144,7 +205,7 @@ def get_sent_data(raw_text, clean_text=True):
     if clean_text:
         if isinstance(raw_text, list):
             raw_text = "\n".join(raw_text)
-        context = simple.format_nice_text(raw_text)
+        context = format_nice_text(raw_text)
     else:
         assert isinstance(raw_text, str)
         context = raw_text
@@ -182,9 +243,9 @@ def get_top_sentences(query: str, sent_data: list, max_word_count: int, scorer: 
 
 def process_file(input_path, output_path, scorer: SimpleScorer, query_type="question", max_word_count=300,
                  verbose=False, clean_text=True):
-    data = io.read_jsonl(input_path)
+    data = read_jsonl(input_path)
     out = []
-    for row in display.maybe_tqdm(data, verbose=verbose):
+    for row in maybe_tqdm(data, verbose=verbose):
         sent_data = get_sent_data(row["article"], clean_text=clean_text)
         i = 1
         while True:
@@ -217,4 +278,4 @@ def process_file(input_path, output_path, scorer: SimpleScorer, query_type="ques
                 "label": row[f"question{i}_gold_label"] - 1,
             })
             i += 1
-    io.write_jsonl(out, output_path)
+    write_jsonl(out, output_path)
