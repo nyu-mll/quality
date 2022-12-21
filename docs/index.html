@@ -101,7 +101,7 @@
     <div class="col-lg-3">
       <div class="list-group">
         <div class="list-group-item">
-        <p>QuALITY is a multiple-choice question answering dataset with context passages in English that have an average length of about 5,000 tokens. QuALITY is distributed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/" style="text-decoration: none;">CC BY 4.0 License</a>. The dataset can be downloaded from the repo <a href="https://github.com/nyu-mll/quality" style="text-decoration: none;">here</a>. For more details about QuALITY, please refer to the paper: <a href="https://arxiv.org/pdf/2112.08608.pdf" style="text-decoration: none;">Pang et al. (2021)</a>.</p>
+        <p>QuALITY is a multiple-choice question answering dataset with context passages in English that have an average length of about 5,000 tokens. QuALITY is distributed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/" style="text-decoration: none;">CC BY 4.0 License</a>. The dataset can be downloaded from the repo <a href="https://github.com/nyu-mll/quality" style="text-decoration: none;">here</a>. For more details about QuALITY, please refer to the paper: <a href="https://arxiv.org/pdf/2112.08608.pdf" style="text-decoration: none;">Pang et al. (2022)</a>.</p>
         <p class="text-center">
           
         </p>
@@ -113,11 +113,28 @@
         </div>
         <div class="list-group-item">
         <pre>
-@article{pang2021quality,
-  title={{QuALITY}: Question Answering with Long Input Texts, Yes!},
-  author={Pang, Richard Yuanzhe and Parrish, Alicia and Joshi, Nitish and Nangia, Nikita and Phang, Jason and Chen, Angelica and Padmakumar, Vishakh and Ma, Johnny and Thompson, Jana and He, He and Bowman, Samuel R.},
-  journal={arXiv preprint arXiv:2112.08608},
-  year={2021}
+@inproceedings{pang-etal-2022-quality,
+    title = "{Q}u{ALITY}: Question Answering with Long Input Texts, Yes!",
+    author = "Pang, Richard Yuanzhe  and
+      Parrish, Alicia  and
+      Joshi, Nitish  and
+      Nangia, Nikita  and
+      Phang, Jason  and
+      Chen, Angelica  and
+      Padmakumar, Vishakh  and
+      Ma, Johnny  and
+      Thompson, Jana  and
+      He, He  and
+      Bowman, Samuel",
+    booktitle = "Proceedings of the 2022 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies",
+    month = jul,
+    year = "2022",
+    address = "Seattle, United States",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2022.naacl-main.391",
+    pages = "5336--5358",
+    abstract = "To enable building and testing models on long-document comprehension, we introduce QuALITY, a multiple-choice QA dataset with context passages in English that have an average length of about 5,000 tokens, much longer than typical current models can process. Unlike in prior work with passages, our questions are written and validated by contributors who have read the entire passage, rather than relying on summaries or excerpts. In addition, only half of the questions are answerable by annotators working under tight time constraints, indicating that skimming and simple search are not enough to consistently perform well. Our baseline models perform poorly on this task (55.4{\%}) and significantly lag behind human performance (93.5{\%}).",
+}
 }</pre>
     </div>
   </div>
@@ -132,6 +149,12 @@
       <li> Rankings are determined by the accuracy on the entire test set. </li>
       <li> Accuracy = (number of correct answers) / (num of examples). 
       <li> SAT-style score = (number of correct answers - (1/3) * number of incorrect answers + 0 * number of abstained answers) / (number of examples). </li>
+      </ul>
+
+      Updates:
+      <ul>
+      <li> [2022/11] We have added promising but unranked results at the bottom of the table. Top dev-set performance is currently 66.9.</li>
+      <li> [2022/12] Please also refer to the <a href="https://www.scrolls-benchmark.com/leaderboard" style="text-decoration: none;">SCROLLS benchmark</a> which includes the QuALITY task; as of November 2022, the top QuALITY accruacy on SCROLLS is 46.0 (test set) / 42.1 (hard subset) by LongT5 XL. </li>
       </ul>
       <table class="table table-responsive">
         <thead class="thead-light">
@@ -172,11 +195,12 @@
 <td colspan="7" style="font-size:13px"> Model description: We estimate human accuracy on QuALITY on a random sample of 20 passages (367 questions). Each question is annotated by 3 new validation annotators who had not previously annotated that passage, and whose labels do not contribute to the assignment of the gold label. See paper for details.</td>
 </tr></tbody>
 
+
 <tbody><tr style="background:#f4f4f4">
     <td scope="row" class='align-middle text-center'>1<br>
       <span class="badge badge-secondary">2022/05</span></td>
     <td class='align-middle text-left'>CoLISA: DPR & DeBERTaV3-large architecture plus contrastive learning & in-sample attention<br/>
-      <span class="affiliation">Anonymous (temporary)</span><br/></td>
+      <span class="affiliation">Mengxing Dong</span><br/></td>
     <td class='align-middle text-center'><button data-id="000010" type="submit" class="display-description";>description</button></td>
     <td class='align-middle text-center'></td>
     <td class='align-middle text-center'></td>
@@ -186,14 +210,14 @@
     <td class='align-middle text-center'><strong>39.6</strong></td>
 </tr>
 <tr id="000010" style="display:none;" class="section" >
-<td colspan="7" style="font-size:13px"> Model description: We extract a short context from the original passage by DPR (using questions and options). Then we successively fine-tune a multiple-choice model on RACE and QuALITY. Besides, we introduce contrastive learning method and in-sample attention mechanism within each sample to better distinguish the answers from the distractors. External data/resources: We use the off-the-shelf DPR retriever to extract the short contexts from original articles. And we use the pre-trained DeBERTaV3-large model on Hugging Face. Besides, RACE is introduced into our first stage of fine tuning the model.</td>
+<td colspan="7" style="font-size:13px"> Model description: We extract a short context from the original passage based on DPR model. Then we successively fine-tune a multiple-choice model on RACE and QuALITY. Besides, we introduce contrastive learning method and in-sample attention mechanism within each sample to better distinguish the answers from the distractors. External data/resources: We use the off-the-shelf DPR retriever to extract the short contexts from original articles. And we use the pre-trained DeBERTaV3-large model on Hugging Face. Besides, RACE is introduced into our first stage of fine tuning the model.</td>
 </tr></tbody>
 
 <tbody><tr style="background:#f4f4f4">
     <td scope="row" class='align-middle text-center'>2<br>
       <span class="badge badge-secondary">2022/04</span></td>
     <td class='align-middle text-left'>CoLISA: DPR & DeBERTaV3-large architecture & contrastive learning<br/>
-      <span class="affiliation">Anonymous (temporary)</span><br/></td>
+      <span class="affiliation">Mengxing Dong</span><br/></td>
     <td class='align-middle text-center'><button data-id="000009" type="submit" class="display-description";>description</button></td>
     <td class='align-middle text-center'></td>
     <td class='align-middle text-center'></td>
@@ -203,7 +227,7 @@
     <td class='align-middle text-center'><strong>39.1</strong></td>
 </tr>
 <tr id="000009" style="display:none;" class="section" >
-<td colspan="7" style="font-size:13px"> Model description: We extract a short context from the original passage by DPR (using questions and options). Then we successively fine-tune a multiple-choice model on RACE and QuALITY. Besides, we introduce contrastive learning method within each sample to better distinguish the answers from the distractors. External data/resources: We use the off-the-shelf DPR retriever to extract the short contexts from original articles. And we use the pre-trained DeBERTaV3-large model on Hugging Face. Besides, RACE is introduced into our first stage of fine tuning the model.</td>
+<td colspan="7" style="font-size:13px"> Model description: We extract a short context from the original passage based on DPR model. Then we successively fine-tune a multiple-choice model on RACE and QuALITY. Besides, we introduce contrastive learning method within each sample to better distinguish the answers from the distractors. External data/resources: We use the off-the-shelf DPR retriever to extract the short contexts from original articles. And we use the pre-trained DeBERTaV3-large model on Hugging Face. Besides, RACE is introduced into our first stage of fine tuning the model.</td>
 </tr></tbody>
 
 <tbody><tr style="background:#f4f4f4">
@@ -340,6 +364,23 @@
 </tr>
 <tr id="000000" style="display:none;" class="section" >
 <td colspan="7" style="font-size:13px"> Model description: We fine-tune a pretrained Longformer which supports up to 4,096 tokens, on QuALITY. See paper for details.</td>
+</tr></tbody>
+
+<tbody><tr style="background:#f4f4f4">
+    <td scope="row" class='align-middle text-center'>--<br>
+      <span class="badge badge-secondary">2022/11</span></td>
+    <td class='align-middle text-left'>Best-of-20 chain-of-thought, using a 52B-parameter LM (Bai et al., 2022) fine-tuned by reinforcement learning with human feedback (RLHF) [Note: added by QuALITY authors; unranked given that performance is on dev set only]<br/>
+      <span class="affiliation">Anthropic, Surge AI</span><br/></td>
+    <td class='align-middle text-center'><button data-id="000011" type="submit" class="display-description";>description</button></td>
+    <td class='align-middle text-center'><a href="https://arxiv.org/pdf/2204.05862.pdf"><i class="far fa-file-alt" style="color:#32CD32"></i></a><br>&<br><a href="https://arxiv.org/pdf/2211.03540.pdf"><i class="far fa-file-alt" style="color:#32CD32"></i></a></td>
+    <td class='align-middle text-center'><a href="https://github.com/anthropics/hh-rlhf"><i class="fas fa-code" style="color:#32CD32"></i></a></td>
+    <td class='align-middle text-center'><strong>66.9</strong></td>
+    <td class='align-middle text-center'><strong>--</strong></td>
+    <td class='align-middle text-center'><strong>--</strong></td>
+    <td class='align-middle text-center'><strong>--</strong></td>
+</tr>
+<tr id="000011" style="display:none;" class="section" >
+<td colspan="7" style="font-size:13px"> Model description: This submission is manually added by QuALITY authors. From the paper: "We prompt the model with a chain-of-thought-style input before asking them to answer (Nye et al., 2021; Wei et al., 2022). We sample 20 instances of model reasoning and choose the one that scores best under our RLHF preference model before conditioning on that reasoning string to generate the answer."</td>
 </tr></tbody>
 
 
