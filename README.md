@@ -39,6 +39,7 @@ Here are the explanations to the fields in the jsonl file. Each json line corres
 - `author`: String. The author of the article.
 - `topic`: String. The topic of the article.
 - `url`: String. The URL of the original unprocessed source article. 
+- `year`: String. The (often approximate) publication year of the article. The exact year is often difficult to locate or scrape; in that case, we use (the author's year of birth + the author's year of death) / 2 as the approximate publication year. 
 - `license`: String. The license information for the article. 
 - `article`: String. The HTML of the article. A script that converts HTML to plain texts is provided. 
 - `questions`: A list of dictionaries explained below. Each line of json has a different number of questions because some questions were removed following validation.
@@ -94,11 +95,27 @@ This project has benefited from financial support to SB by Eric and Wendy Schmid
 ## Citation
 
 ```
-@article{pang2021quality,
-  title={{QuALITY}: Question Answering with Long Input Texts, Yes!},
-  author={Pang, Richard Yuanzhe and Parrish, Alicia and Joshi, Nitish and Nangia, Nikita and Phang, Jason and Chen, Angelica and Padmakumar, Vishakh and Ma, Johnny and Thompson, Jana and He, He and Bowman, Samuel R.},
-  journal={arXiv preprint arXiv:2112.08608},
-  year={2021}
+@inproceedings{pang-etal-2022-quality,
+    title = "{Q}u{ALITY}: Question Answering with Long Input Texts, Yes!",
+    author = "Pang, Richard Yuanzhe  and
+      Parrish, Alicia  and
+      Joshi, Nitish  and
+      Nangia, Nikita  and
+      Phang, Jason  and
+      Chen, Angelica  and
+      Padmakumar, Vishakh  and
+      Ma, Johnny  and
+      Thompson, Jana  and
+      He, He  and
+      Bowman, Samuel",
+    booktitle = "Proceedings of the 2022 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies",
+    month = jul,
+    year = "2022",
+    address = "Seattle, United States",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2022.naacl-main.391",
+    pages = "5336--5358",
+    abstract = "To enable building and testing models on long-document comprehension, we introduce QuALITY, a multiple-choice QA dataset with context passages in English that have an average length of about 5,000 tokens, much longer than typical current models can process. Unlike in prior work with passages, our questions are written and validated by contributors who have read the entire passage, rather than relying on summaries or excerpts. In addition, only half of the questions are answerable by annotators working under tight time constraints, indicating that skimming and simple search are not enough to consistently perform well. Our baseline models perform poorly on this task (55.4{\%}) and significantly lag behind human performance (93.5{\%}).",
 }
 ```
 
