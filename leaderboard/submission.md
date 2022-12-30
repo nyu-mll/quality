@@ -1,6 +1,6 @@
 # Submission to the QuALITY Leaderboard
 
-Last updated: 01/17/2022
+Last updated: 12/30/2022
 
 
 ## What to submit
@@ -20,11 +20,11 @@ Last updated: 01/17/2022
 
 5. [Required] Long model description (plain text or URL to pdf; at least a paragraph). After reading the model description, an experienced NLP researcher/engineer should have a rough idea of how to implement the model. If you are providing the URL to your paper below AND the model in the paper can be directly used for the QuALITY dataset, then you do not need to write a comprehensive description.
 
-6. [Required] What external data or resources (e.g., off-the-shelf pretrained language model, retrieval model, knowledge graph, other datasets, etc.) did you use to train the system? 
+6. [Optional but encouraged] What external data or resources (e.g., off-the-shelf pretrained language model, retrieval model, knowledge graph, other datasets, etc.) did you use to train the system? 
 - Example 1: "We use the pretrained DeBERTa-v3-base model on Hugging Face. We do intermediate training on RACE (Lai et al., 2017), and then fine-tune on QuALITY's training set. During fine-tuning on QuALITY, we use the off-the-shelf DPR retriever (Karpukhin et al., 2020)."
 - Example 2: "We train a custom version of T5 on BookCorpus and Wikipedia. We fine-tune on QuALITY; during fine-tuning, we use ConceptNet 5.5 (Speer et al., 2016)."
 
-7. [Optional but strongly encouraged] URL to your publicly accessible codebase (e.g., Github repo).
+7. [Optional but encouraged] URL to your publicly accessible codebase (e.g., Github repo).
 
 8. [Optional] URL to the model checkpoint. 
 
