@@ -245,20 +245,22 @@ def process_file(input_path, output_path, scorer: SimpleScorer, query_type="ques
                  verbose=False, clean_text=True):
     data = read_jsonl(input_path)
     out = []
+    i = 0
     for row in maybe_tqdm(data, verbose=verbose):
+        if i % 10 == 0:
+            print(i)
         sent_data = get_sent_data(row["article"], clean_text=clean_text)
-        i = 1
-        while True:
-            if f"question{i}" not in row:
-                break
+        for x in row['questions']:
+            q = x['question']
+            options = x['options']
+            label = x['gold_label']
             if query_type == "question":
-                query = row[f"question{i}"].strip()
+                query = q.strip()
             elif query_type == "oracle_answer":
-                query = row[f"question{i}option{row[f'question{i}_gold_label']}"].strip()
+                query = options[label].strip()
             elif query_type == "oracle_question_answer":
                 query = (
-                    row[f"question{i}"].strip()
-                    + " " + row[f"question{i}option{row['question{i}_gold_label']}"].strip()
+                    q.strip() + " " + options[label].strip()
                 )
             else:
                 raise KeyError(query_type)
@@ -270,12 +272,12 @@ def process_file(input_path, output_path, scorer: SimpleScorer, query_type="ques
             )
             out.append({
                 "context": shortened_article,
-                "query": " " + row[f"question{i}"].strip(),
-                "option_0": " " + row[f"question{i}option1"].strip(),
-                "option_1": " " + row[f"question{i}option2"].strip(),
-                "option_2": " " + row[f"question{i}option3"].strip(),
-                "option_3": " " + row[f"question{i}option4"].strip(),
-                "label": row[f"question{i}_gold_label"] - 1,
+                "query": " " + q.strip(),
+                "option_0": " " + options[0].strip(),
+                "option_1": " " + options[1].strip(),
+                "option_2": " " + options[2].strip(),
+                "option_3": " " + options[3].strip(),
+                "label": label - 1,  # warning
             })
-            i += 1
+        i += 1
     write_jsonl(out, output_path)
