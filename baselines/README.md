@@ -1,5 +1,9 @@
 # QuALITY Baselines
 
+IMPORTANT: The below note and the `lrqa_deprecated` folder are deprecated. Please see the `lrqa` folder for updated instruction and updated code. 
+
+------
+
 Written by [Jason Phang](https://github.com/zphang/lrqa).
 
 ## Overview
