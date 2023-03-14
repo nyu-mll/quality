@@ -5,6 +5,7 @@
 
 ## UPDATE
 
+- [March 2023] We updated the baseline codebase and its README, so that the public can have a easier time running the code.
 - [June 2022] Releasing QuALITY-v1.0.1 (minor update from v1.0: see [release notes](#release-notes)).
 - [June 2022] Releasing QuALITY-v1.0 (minor update from v0.9: see [release notes](#release-notes)).
 - [March 2022] [The leaderboard](https://nyu-mll.github.io/quality/) is up! 
