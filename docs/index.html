@@ -155,6 +155,7 @@
       <ul>
       <li> [2022/11] We have added promising but unranked results at the bottom of the table. Top dev-set performance is currently 66.9.</li>
       <li> [2022/12] Please also refer to the <a href="https://www.scrolls-benchmark.com/leaderboard" style="text-decoration: none;">SCROLLS benchmark</a> which includes the QuALITY task; as of November 2022, the top QuALITY accruacy on SCROLLS is 46.0 (test set) / 42.1 (hard subset) by LongT5 XL. </li>
+      <li> [2023/5] More updates in the leaderboard. </li>
       </ul>
       <table class="table table-responsive">
         <thead class="thead-light">
@@ -185,53 +186,73 @@
       <span class="affiliation">New York University</span><br/></td>
     <td class='align-middle text-center'><button data-id="000008" type="submit" class="display-description";>description</button></td>
     <td class='align-middle text-center'><a href="https://arxiv.org/pdf/2112.08608.pdf"><i class="far fa-file-alt" style="color:#32CD32"></i></a></td>
-    <td class='align-middle text-center'></td>
+    <td class='align-middle text-center'>–</td>
     <td class='align-middle text-center'><strong>93.5</strong></td>
     <td class='align-middle text-center'><strong>89.1</strong></td>
     <td class='align-middle text-center'><strong>91.4</strong></td>
     <td class='align-middle text-center'><strong>85.4</strong></td>
 </tr>
 <tr id="000008" style="display:none;" class="section" >
-<td colspan="7" style="font-size:13px"> Model description: We estimate human accuracy on QuALITY on a random sample of 20 passages (367 questions). Each question is annotated by 3 new validation annotators who had not previously annotated that passage, and whose labels do not contribute to the assignment of the gold label. See paper for details.</td>
+<td colspan="9" style="font-size:13px"> Model description: We estimate human accuracy on QuALITY on a random sample of 20 passages (367 questions). Each question is annotated by 3 new validation annotators who had not previously annotated that passage, and whose labels do not contribute to the assignment of the gold label. See paper for details.</td>
 </tr></tbody>
-
 
 <tbody><tr style="background:#f4f4f4">
     <td scope="row" class='align-middle text-center'>1<br>
+      <span class="badge badge-secondary">2023/05</span></td>
+    <td class='align-middle text-left'>RAPTOR (Reading, Attending, and Processing Tree-Organized Retrieval): employs text-embedding-ada-002 for creating embeddings, gpt-3.5-turbo for summarizing clusters, and utilizes GPT-4 for generating answers<br/>
+      <span class="affiliation">Anonymous (temporary)</span><br/></td>
+    <td class='align-middle text-center'><button data-id="000012" type="submit" class="display-description";>description</button></td>
+    <td class='align-middle text-center'></td>
+    <td class='align-middle text-center'></td>
+    <td class='align-middle text-center'><strong>69.5</strong></td>
+    <td class='align-middle text-center'><strong>60.5</strong></td>
+    <td class='align-middle text-center'><strong>61.9</strong></td>
+    <td class='align-middle text-center'><strong>49.9</strong></td>
+</tr>
+<tr id="000012" style="display:none;" class="section" >
+<td colspan="9" style="font-size:13px"> Model description: RAPTOR is a novel retrieval system that works by chunking the text and creating embedding vectors of the chunked texts with an embedding model. It then employs a novel variant of the Gaussian Mixture Model (GMM) for text clustering and clusters the text after dimensionality reduction on the embeddings using Uniform Manifold Approximation and Projection (UMAP). 
+<br>
+Then, the formed clusters are summarized using a large language model (LLM). The generated summary text is again subjected to clustering. This process is iteratively performed for a predetermined number of layers. The outcome of this iterative process is a bottom-up hierarchical tree structure, wherein each node signifies a cluster of related text chunks. 
+<br>
+During querying, the hierarchical tree structure allows for efficient traversal and retrieval of relevant information. This is accomplished by starting at the topmost level and performing a beam search until a specified number of layers is reached, with node selection predicated on the cosine similarity with the query vector. The chosen nodes are then combined with the query and used as context, which is subsequently passed to the LLM to generate the final answers. </td>
+</tr></tbody>
+
+<tbody><tr style="background:#f4f4f4">
+    <td scope="row" class='align-middle text-center'>2<br>
       <span class="badge badge-secondary">2022/05</span></td>
     <td class='align-middle text-left'>CoLISA: DPR & DeBERTaV3-large architecture plus contrastive learning & in-sample attention<br/>
-      <span class="affiliation">Mengxing Dong</span><br/></td>
+      <span class="affiliation">SUDA NLP & I2R at Soochow University</span><br/></td>
     <td class='align-middle text-center'><button data-id="000010" type="submit" class="display-description";>description</button></td>
-    <td class='align-middle text-center'></td>
-    <td class='align-middle text-center'></td>
+    <td class='align-middle text-center'><a href="https://link.springer.com/chapter/10.1007/978-3-031-28244-7_17"><i class="far fa-file-alt" style="color:#32CD32"></i></a></td>
+    <td class='align-middle text-center'><a href="https://github.com/Walle1493/CoLISA"><i class="fas fa-code" style="color:#32CD32"></i></a></td>
     <td class='align-middle text-center'><strong>62.3</strong></td>
     <td class='align-middle text-center'><strong>54.7</strong></td>
     <td class='align-middle text-center'><strong>49.7</strong></td>
     <td class='align-middle text-center'><strong>39.6</strong></td>
 </tr>
 <tr id="000010" style="display:none;" class="section" >
-<td colspan="7" style="font-size:13px"> Model description: We extract a short context from the original passage based on DPR model. Then we successively fine-tune a multiple-choice model on RACE and QuALITY. Besides, we introduce contrastive learning method and in-sample attention mechanism within each sample to better distinguish the answers from the distractors. External data/resources: We use the off-the-shelf DPR retriever to extract the short contexts from original articles. And we use the pre-trained DeBERTaV3-large model on Hugging Face. Besides, RACE is introduced into our first stage of fine tuning the model.</td>
+<td colspan="9" style="font-size:13px"> Model description: We extract a short context from the original passage by DPR (using questions and options). Then we successively fine-tune a multiple-choice model on RACE and QuALITY. Besides, we introduce contrastive learning method and in-sample attention mechanism within each sample to better distinguish the answers from the distractors. External data/resources: We use the off-the-shelf DPR retriever to extract the short contexts from original articles. And we use the pre-trained DeBERTaV3-large model on Hugging Face. Besides, RACE is introduced into our first stage of fine tuning the model.</td>
 </tr></tbody>
 
 <tbody><tr style="background:#f4f4f4">
-    <td scope="row" class='align-middle text-center'>2<br>
+    <td scope="row" class='align-middle text-center'>3<br>
       <span class="badge badge-secondary">2022/04</span></td>
     <td class='align-middle text-left'>CoLISA: DPR & DeBERTaV3-large architecture & contrastive learning<br/>
-      <span class="affiliation">Mengxing Dong</span><br/></td>
+      <span class="affiliation">SUDA NLP & I2R at Soochow University</span><br/></td>
     <td class='align-middle text-center'><button data-id="000009" type="submit" class="display-description";>description</button></td>
-    <td class='align-middle text-center'></td>
-    <td class='align-middle text-center'></td>
+    <td class='align-middle text-center'><a href="https://link.springer.com/chapter/10.1007/978-3-031-28244-7_17"><i class="far fa-file-alt" style="color:#32CD32"></i></a></td>
+    <td class='align-middle text-center'><a href="https://github.com/Walle1493/CoLISA"><i class="fas fa-code" style="color:#32CD32"></i></a></td>
     <td class='align-middle text-center'><strong>62.1</strong></td>
     <td class='align-middle text-center'><strong>54.3</strong></td>
     <td class='align-middle text-center'><strong>49.5</strong></td>
     <td class='align-middle text-center'><strong>39.1</strong></td>
 </tr>
 <tr id="000009" style="display:none;" class="section" >
-<td colspan="7" style="font-size:13px"> Model description: We extract a short context from the original passage based on DPR model. Then we successively fine-tune a multiple-choice model on RACE and QuALITY. Besides, we introduce contrastive learning method within each sample to better distinguish the answers from the distractors. External data/resources: We use the off-the-shelf DPR retriever to extract the short contexts from original articles. And we use the pre-trained DeBERTaV3-large model on Hugging Face. Besides, RACE is introduced into our first stage of fine tuning the model.</td>
+<td colspan="9" style="font-size:13px"> Model description: We extract a short context from the original passage by DPR (using questions and options). Then we successively fine-tune a multiple-choice model on RACE and QuALITY. Besides, we introduce contrastive learning method within each sample to better distinguish the answers from the distractors. External data/resources: We use the off-the-shelf DPR retriever to extract the short contexts from original articles. And we use the pre-trained DeBERTaV3-large model on Hugging Face. Besides, RACE is introduced into our first stage of fine tuning the model.</td>
 </tr></tbody>
 
 <tbody><tr style="background:#f4f4f4">
-    <td scope="row" class='align-middle text-center'>3<br>
+    <td scope="row" class='align-middle text-center'>4<br>
       <span class="badge badge-secondary">2021/12</span></td>
     <td class='align-middle text-left'>Baseline model: DPR retrieval using questions & DeBERTaV3-large with intermediate training on RACE<br/>
       <span class="affiliation">New York University</span><br/></td>
@@ -244,11 +265,11 @@
     <td class='align-middle text-center'><strong>28.1</strong></td>
 </tr>
 <tr id="000005" style="display:none;" class="section" >
-<td colspan="7" style="font-size:13px"> Model description: We use DeBERTaV3-large and first do intermediate training on RACE; then we fine-tune the model on QuALITY. For fine-tuning, we use the similarity (based on DPR) between each source sentence and the question to select shorter contexts to feed into the QA model. See paper for details.</td>
+<td colspan="9" style="font-size:13px"> Model description: We use DeBERTaV3-large and first do intermediate training on RACE; then we fine-tune the model on QuALITY. For fine-tuning, we use the similarity (based on DPR) between each source sentence and the question to select shorter contexts to feed into the QA model. See paper for details.</td>
 </tr></tbody>
 
 <tbody><tr style="background:#f4f4f4">
-    <td scope="row" class='align-middle text-center'>4<br>
+    <td scope="row" class='align-middle text-center'>5<br>
       <span class="badge badge-secondary">2021/12</span></td>
     <td class='align-middle text-left'>Baseline model: DPR retrieval using questions & RoBERTa-large with intermediate training on RACE<br/>
       <span class="affiliation">New York University</span><br/></td>
@@ -261,11 +282,11 @@
     <td class='align-middle text-center'><strong>26.3</strong></td>
 </tr>
 <tr id="000003" style="display:none;" class="section" >
-<td colspan="7" style="font-size:13px"> Model description: We use RoBERTa-large and first do intermediate training on RACE; then we fine-tune the model on QuALITY. For fine-tuning, we use the similarity (based on DPR) between each source sentence and the question to select shorter contexts to feed into the QA model. See paper for details.</td>
+<td colspan="9" style="font-size:13px"> Model description: We use RoBERTa-large and first do intermediate training on RACE; then we fine-tune the model on QuALITY. For fine-tuning, we use the similarity (based on DPR) between each source sentence and the question to select shorter contexts to feed into the QA model. See paper for details.</td>
 </tr></tbody>
 
 <tbody><tr style="background:#f4f4f4">
-    <td scope="row" class='align-middle text-center'>5<br>
+    <td scope="row" class='align-middle text-center'>6<br>
       <span class="badge badge-secondary">2021/12</span></td>
     <td class='align-middle text-left'>Baseline model: DPR retrieval using questions & DeBERTaV3-large <br/>
       <span class="affiliation">New York University</span><br/></td>
@@ -278,11 +299,11 @@
     <td class='align-middle text-center'><strong>21.6</strong></td>
 </tr>
 <tr id="000004" style="display:none;" class="section" >
-<td colspan="7" style="font-size:13px"> Model description: We fine-tune DeBERTa-V3-large on QuALITY. We use the similarity (based on DPR) between each source sentence and the question to select shorter contexts to feed into the QA model. See paper for details.</td>
+<td colspan="9" style="font-size:13px"> Model description: We fine-tune DeBERTa-V3-large on QuALITY. We use the similarity (based on DPR) between each source sentence and the question to select shorter contexts to feed into the QA model. See paper for details.</td>
 </tr></tbody>
 
 <tbody><tr style="background:#f4f4f4">
-    <td scope="row" class='align-middle text-center'>6<br>
+    <td scope="row" class='align-middle text-center'>7<br>
       <span class="badge badge-secondary">2021/12</span></td>
     <td class='align-middle text-left'>Question-only baseline: DeBERTaV3-large with intermediate training on RACE<br/>
       <span class="affiliation">New York University</span><br/></td>
@@ -295,11 +316,11 @@
     <td class='align-middle text-center'><strong>17.6</strong></td>
 </tr>
 <tr id="000007" style="display:none;" class="section" >
-<td colspan="7" style="font-size:13px"> Model description: We use DeBERTaV3-large and first do intermediate training on RACE; then we fine-tune the model on QuALITY. For fine-tuning the input only consists of the questions and options (so, no articles).</td>
+<td colspan="9" style="font-size:13px"> Model description: We use DeBERTaV3-large and first do intermediate training on RACE; then we fine-tune the model on QuALITY. For fine-tuning the input only consists of the questions and options (so, no articles).</td>
 </tr></tbody>
 
 <tbody><tr style="background:#f4f4f4">
-    <td scope="row" class='align-middle text-center'>7<br>
+    <td scope="row" class='align-middle text-center'>8<br>
       <span class="badge badge-secondary">2021/12</span></td>
     <td class='align-middle text-left'>Baseline model: fastText retrieval using questions & RoBERTa-large<br/>
       <span class="affiliation">New York University</span><br/></td>
@@ -312,11 +333,11 @@
     <td class='align-middle text-center'><strong>14.3</strong></td>
 </tr>
 <tr id="000002" style="display:none;" class="section" >
-<td colspan="7" style="font-size:13px"> Model description: We fine-tune RoBERTa-large on QuALITY. We use the similarity (based on fastText) between each source sentence and the question to select shorter contexts to feed into the QA model. See paper for details.</td>
+<td colspan="9" style="font-size:13px"> Model description: We fine-tune RoBERTa-large on QuALITY. We use the similarity (based on fastText) between each source sentence and the question to select shorter contexts to feed into the QA model. See paper for details.</td>
 </tr></tbody>
 
 <tbody><tr style="background:#f4f4f4">
-    <td scope="row" class='align-middle text-center'>8<br>
+    <td scope="row" class='align-middle text-center'>9<br>
       <span class="badge badge-secondary">2021/12</span></td>
     <td class='align-middle text-left'>Question-only baseline: DeBERTaV3-large<br/>
       <span class="affiliation">New York University</span><br/></td>
@@ -329,11 +350,11 @@
     <td class='align-middle text-center'><strong>13.5</strong></td>
 </tr>
 <tr id="000006" style="display:none;" class="section" >
-<td colspan="7" style="font-size:13px"> Model description: We fine-tune DeBERTa-V3-large on QuALITY but the input only consists of the questions and options (so, no articles).</td>
+<td colspan="9" style="font-size:13px"> Model description: Model description: We fine-tune DeBERTa-V3-large on QuALITY but the input only consists of the questions and options (so, no articles).</td>
 </tr></tbody>
 
 <tbody><tr style="background:#f4f4f4">
-    <td scope="row" class='align-middle text-center'>9<br>
+    <td scope="row" class='align-middle text-center'>10<br>
       <span class="badge badge-secondary">2021/12</span></td>
     <td class='align-middle text-left'>Baseline model: Longformer with intermediate training on RACE<br/>
       <span class="affiliation">New York University</span><br/></td>
@@ -346,11 +367,11 @@
     <td class='align-middle text-center'><strong>13.8</strong></td>
 </tr>
 <tr id="000001" style="display:none;" class="section" >
-<td colspan="7" style="font-size:13px"> Model description: We first do intermediate training using a pretrained Longformer (which supports up to 4,096 tokens) on RACE. Then, we fine-tune the model on QuALITY. See paper for details.</td>
+<td colspan="9" style="font-size:13px"> Model description: We first do intermediate training using a pretrained Longformer (which supports up to 4,096 tokens) on RACE. Then, we fine-tune the model on QuALITY. See paper for details.</td>
 </tr></tbody>
 
 <tbody><tr style="background:#f4f4f4">
-    <td scope="row" class='align-middle text-center'>10<br>
+    <td scope="row" class='align-middle text-center'>11<br>
       <span class="badge badge-secondary">2021/12</span></td>
     <td class='align-middle text-left'>Baseline model: Longformer<br/>
       <span class="affiliation">New York University</span><br/></td>
@@ -363,7 +384,7 @@
     <td class='align-middle text-center'><strong>5.7</strong></td>
 </tr>
 <tr id="000000" style="display:none;" class="section" >
-<td colspan="7" style="font-size:13px"> Model description: We fine-tune a pretrained Longformer which supports up to 4,096 tokens, on QuALITY. See paper for details.</td>
+<td colspan="9" style="font-size:13px"> Model description: We fine-tune a pretrained Longformer which supports up to 4,096 tokens, on QuALITY. See paper for details.</td>
 </tr></tbody>
 
 <tbody><tr style="background:#f4f4f4">
@@ -375,12 +396,12 @@
     <td class='align-middle text-center'><a href="https://arxiv.org/pdf/2204.05862.pdf"><i class="far fa-file-alt" style="color:#32CD32"></i></a><br>&<br><a href="https://arxiv.org/pdf/2211.03540.pdf"><i class="far fa-file-alt" style="color:#32CD32"></i></a></td>
     <td class='align-middle text-center'><a href="https://github.com/anthropics/hh-rlhf"><i class="fas fa-code" style="color:#32CD32"></i></a></td>
     <td class='align-middle text-center'><strong>66.9</strong></td>
-    <td class='align-middle text-center'><strong>--</strong></td>
-    <td class='align-middle text-center'><strong>--</strong></td>
-    <td class='align-middle text-center'><strong>--</strong></td>
+    <td class='align-middle text-center'><strong>–</strong></td>
+    <td class='align-middle text-center'><strong>–</strong></td>
+    <td class='align-middle text-center'><strong>–</strong></td>
 </tr>
 <tr id="000011" style="display:none;" class="section" >
-<td colspan="7" style="font-size:13px"> Model description: This submission is manually added by QuALITY authors. From the paper: "We prompt the model with a chain-of-thought-style input before asking them to answer (Nye et al., 2021; Wei et al., 2022). We sample 20 instances of model reasoning and choose the one that scores best under our RLHF preference model before conditioning on that reasoning string to generate the answer."</td>
+<td colspan="9" style="font-size:13px"> Model description: This submission is manually added by QuALITY authors. From the paper: "We prompt the model with a chain-of-thought-style input before asking them to answer (Nye et al., 2021; Wei et al., 2022). We sample 20 instances of model reasoning and choose the one that scores best under our RLHF preference model before conditioning on that reasoning string to generate the answer."</td>
 </tr></tbody>
 
 
