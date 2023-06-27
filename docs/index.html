@@ -142,7 +142,7 @@
 <div class="col-lg-9">
   <div class="card card-outline-secondary">
     <div class="card-header">
-      Leaderboard (last updated: May 2023)
+      Leaderboard (last updated: June 2023)
     </div>
     <div class="card-body">
       Important notes:
@@ -198,23 +198,19 @@
 
 <tbody><tr style="background:#f4f4f4">
     <td scope="row" class='align-middle text-center'>1<br>
-      <span class="badge badge-secondary">2023/05</span></td>
-    <td class='align-middle text-left'>RAPTOR (Reading, Attending, and Processing Tree-Organized Retrieval): employs text-embedding-ada-002 for creating embeddings, gpt-3.5-turbo for summarizing clusters, and utilizes GPT-4 for generating answers<br/>
+      <span class="badge badge-secondary">2023/06</span></td>
+    <td class='align-middle text-left'>RAPTOR (collapsed tree) + GPT-4<br/>
       <span class="affiliation">Anonymous (temporary)</span><br/></td>
     <td class='align-middle text-center'><button data-id="000012" type="submit" class="display-description";>description</button></td>
     <td class='align-middle text-center'></td>
     <td class='align-middle text-center'></td>
-    <td class='align-middle text-center'><strong>69.5</strong></td>
-    <td class='align-middle text-center'><strong>60.5</strong></td>
-    <td class='align-middle text-center'><strong>61.9</strong></td>
-    <td class='align-middle text-center'><strong>49.9</strong></td>
+    <td class='align-middle text-center'><strong>82.6</strong></td>
+    <td class='align-middle text-center'><strong>76.2</strong></td>
+    <td class='align-middle text-center'><strong>77.5</strong></td>
+    <td class='align-middle text-center'><strong>69.3</strong></td>
 </tr>
 <tr id="000012" style="display:none;" class="section" >
-<td colspan="9" style="font-size:13px"> Model description: RAPTOR is a novel retrieval system that works by chunking the text and creating embedding vectors of the chunked texts with an embedding model. It then employs a novel variant of the Gaussian Mixture Model (GMM) for text clustering and clusters the text after dimensionality reduction on the embeddings using Uniform Manifold Approximation and Projection (UMAP). 
-<br>
-Then, the formed clusters are summarized using a large language model (LLM). The generated summary text is again subjected to clustering. This process is iteratively performed for a predetermined number of layers. The outcome of this iterative process is a bottom-up hierarchical tree structure, wherein each node signifies a cluster of related text chunks. 
-<br>
-During querying, the hierarchical tree structure allows for efficient traversal and retrieval of relevant information. This is accomplished by starting at the topmost level and performing a beam search until a specified number of layers is reached, with node selection predicated on the cosine similarity with the query vector. The chosen nodes are then combined with the query and used as context, which is subsequently passed to the LLM to generate the final answers. </td>
+<td colspan="8" style="font-size:13px"> Model description: RAPTOR recursively clusters chunks of text and generates text summaries of those clusters constructing a summarization tree from the bottom-up. At inference time, RAPTOR retrieves from this tree, allowing it to integrate information across large text corpora at varying levels of abstraction. RAPTOR employs a novel variant of the Gaussian Mixture Model (GMM) for text clustering and clusters the text after dimensionality reduction on the embeddings using Uniform Manifold Approximation and Projection (UMAP). Then, the formed clusters are summarized using a large language model (LLM). The generated summary text is again subjected to clustering. This process is iteratively performed for a predetermined number of layers. The outcome of this iterative process is a bottom-up hierarchical tree structure, wherein each node signifies a cluster of related text chunks. RAPTOR uses SBERT embeddings for clustering.</td>
 </tr></tbody>
 
 <tbody><tr style="background:#f4f4f4">
