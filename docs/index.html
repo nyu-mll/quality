@@ -142,7 +142,7 @@
 <div class="col-lg-9">
   <div class="card card-outline-secondary">
     <div class="card-header">
-      Leaderboard (last updated: June 2023)
+      Leaderboard (last updated: October 2023)
     </div>
     <div class="card-body">
       Important notes:
@@ -202,7 +202,7 @@
     <td class='align-middle text-left'>RAPTOR (collapsed tree) + GPT-4<br/>
       <span class="affiliation">Anonymous (temporary)</span><br/></td>
     <td class='align-middle text-center'><button data-id="000012" type="submit" class="display-description";>description</button></td>
-    <td class='align-middle text-center'></td>
+    <td class='align-middle text-center'><a href="https://openreview.net/attachment?id=GN921JHCRw&name=pdf"><i class="far fa-file-alt" style="color:#32CD32"></i></a></td>
     <td class='align-middle text-center'></td>
     <td class='align-middle text-center'><strong>82.6</strong></td>
     <td class='align-middle text-center'><strong>76.2</strong></td>
@@ -215,6 +215,23 @@
 
 <tbody><tr style="background:#f4f4f4">
     <td scope="row" class='align-middle text-center'>2<br>
+      <span class="badge badge-secondary">2023/10</span></td>
+    <td class='align-middle text-left'>LongMA: Fine-Tuning TechGPT-7B using QLoRA on QuALITY and RACE subset<br/>
+      <span class="affiliation">Northeastern University</span><br/></td>
+    <td class='align-middle text-center'><button data-id="000013" type="submit" class="display-description";>description</button></td>
+    <td class='align-middle text-center'></td>
+    <td class='align-middle text-center'></td>
+    <td class='align-middle text-center'><strong>73.0</strong></td>
+    <td class='align-middle text-center'><strong>64.0</strong></td>
+    <td class='align-middle text-center'><strong>64.8</strong></td>
+    <td class='align-middle text-center'><strong>53.0</strong></td>
+</tr>
+<tr id="000013" style="display:none;" class="section" >
+<td colspan="8" style="font-size:13px"> Model description: We utilize TechGPT to identify the most pertinent contexts for a given question and set of options, which is used to create subsets derived from the QuALITY and RACE datasets. To ensure compatibility, we limit the maximum token length to 2048 for the question, options, and contexts. During the training phase, we use QLoRA to fine-tune the TechGPT-7b model. In the first stage, we fine-tuned 2 epochs on the RACE subset, followed by a second stage of fine-tuning on the QuALITY subset for 2 epochs.</td>
+</tr></tbody>
+
+<tbody><tr style="background:#f4f4f4">
+    <td scope="row" class='align-middle text-center'>3<br>
       <span class="badge badge-secondary">2022/05</span></td>
     <td class='align-middle text-left'>CoLISA: DPR & DeBERTaV3-large architecture plus contrastive learning & in-sample attention<br/>
       <span class="affiliation">SUDA NLP & I2R at Soochow University</span><br/></td>
@@ -231,7 +248,7 @@
 </tr></tbody>
 
 <tbody><tr style="background:#f4f4f4">
-    <td scope="row" class='align-middle text-center'>3<br>
+    <td scope="row" class='align-middle text-center'>4<br>
       <span class="badge badge-secondary">2022/04</span></td>
     <td class='align-middle text-left'>CoLISA: DPR & DeBERTaV3-large architecture & contrastive learning<br/>
       <span class="affiliation">SUDA NLP & I2R at Soochow University</span><br/></td>
@@ -248,7 +265,7 @@
 </tr></tbody>
 
 <tbody><tr style="background:#f4f4f4">
-    <td scope="row" class='align-middle text-center'>4<br>
+    <td scope="row" class='align-middle text-center'>5<br>
       <span class="badge badge-secondary">2021/12</span></td>
     <td class='align-middle text-left'>Baseline model: DPR retrieval using questions & DeBERTaV3-large with intermediate training on RACE<br/>
       <span class="affiliation">New York University</span><br/></td>
@@ -265,7 +282,7 @@
 </tr></tbody>
 
 <tbody><tr style="background:#f4f4f4">
-    <td scope="row" class='align-middle text-center'>5<br>
+    <td scope="row" class='align-middle text-center'>6<br>
       <span class="badge badge-secondary">2021/12</span></td>
     <td class='align-middle text-left'>Baseline model: DPR retrieval using questions & RoBERTa-large with intermediate training on RACE<br/>
       <span class="affiliation">New York University</span><br/></td>
@@ -282,7 +299,7 @@
 </tr></tbody>
 
 <tbody><tr style="background:#f4f4f4">
-    <td scope="row" class='align-middle text-center'>6<br>
+    <td scope="row" class='align-middle text-center'>7<br>
       <span class="badge badge-secondary">2021/12</span></td>
     <td class='align-middle text-left'>Baseline model: DPR retrieval using questions & DeBERTaV3-large <br/>
       <span class="affiliation">New York University</span><br/></td>
@@ -299,7 +316,7 @@
 </tr></tbody>
 
 <tbody><tr style="background:#f4f4f4">
-    <td scope="row" class='align-middle text-center'>7<br>
+    <td scope="row" class='align-middle text-center'>8<br>
       <span class="badge badge-secondary">2021/12</span></td>
     <td class='align-middle text-left'>Question-only baseline: DeBERTaV3-large with intermediate training on RACE<br/>
       <span class="affiliation">New York University</span><br/></td>
@@ -316,7 +333,7 @@
 </tr></tbody>
 
 <tbody><tr style="background:#f4f4f4">
-    <td scope="row" class='align-middle text-center'>8<br>
+    <td scope="row" class='align-middle text-center'>9<br>
       <span class="badge badge-secondary">2021/12</span></td>
     <td class='align-middle text-left'>Baseline model: fastText retrieval using questions & RoBERTa-large<br/>
       <span class="affiliation">New York University</span><br/></td>
@@ -333,7 +350,7 @@
 </tr></tbody>
 
 <tbody><tr style="background:#f4f4f4">
-    <td scope="row" class='align-middle text-center'>9<br>
+    <td scope="row" class='align-middle text-center'>10<br>
       <span class="badge badge-secondary">2021/12</span></td>
     <td class='align-middle text-left'>Question-only baseline: DeBERTaV3-large<br/>
       <span class="affiliation">New York University</span><br/></td>
@@ -350,7 +367,7 @@
 </tr></tbody>
 
 <tbody><tr style="background:#f4f4f4">
-    <td scope="row" class='align-middle text-center'>10<br>
+    <td scope="row" class='align-middle text-center'>11<br>
       <span class="badge badge-secondary">2021/12</span></td>
     <td class='align-middle text-left'>Baseline model: Longformer with intermediate training on RACE<br/>
       <span class="affiliation">New York University</span><br/></td>
@@ -367,7 +384,7 @@
 </tr></tbody>
 
 <tbody><tr style="background:#f4f4f4">
-    <td scope="row" class='align-middle text-center'>11<br>
+    <td scope="row" class='align-middle text-center'>12<br>
       <span class="badge badge-secondary">2021/12</span></td>
     <td class='align-middle text-left'>Baseline model: Longformer<br/>
       <span class="affiliation">New York University</span><br/></td>
