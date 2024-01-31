@@ -142,7 +142,7 @@
 <div class="col-lg-9">
   <div class="card card-outline-secondary">
     <div class="card-header">
-      Leaderboard (last updated: October 2023)
+      Leaderboard (last updated: January 2024)
     </div>
     <div class="card-body">
       Important notes:
@@ -200,7 +200,7 @@
     <td scope="row" class='align-middle text-center'>1<br>
       <span class="badge badge-secondary">2023/06</span></td>
     <td class='align-middle text-left'>RAPTOR (collapsed tree) + GPT-4<br/>
-      <span class="affiliation">Anonymous (temporary)</span><br/></td>
+      <span class="affiliation">Stanford University</span><br/></td>
     <td class='align-middle text-center'><button data-id="000012" type="submit" class="display-description";>description</button></td>
     <td class='align-middle text-center'><a href="https://openreview.net/attachment?id=GN921JHCRw&name=pdf"><i class="far fa-file-alt" style="color:#32CD32"></i></a></td>
     <td class='align-middle text-center'></td>
@@ -213,11 +213,29 @@
 <td colspan="8" style="font-size:13px"> Model description: RAPTOR recursively clusters chunks of text and generates text summaries of those clusters constructing a summarization tree from the bottom-up. At inference time, RAPTOR retrieves from this tree, allowing it to integrate information across large text corpora at varying levels of abstraction. RAPTOR employs a novel variant of the Gaussian Mixture Model (GMM) for text clustering and clusters the text after dimensionality reduction on the embeddings using Uniform Manifold Approximation and Projection (UMAP). Then, the formed clusters are summarized using a large language model (LLM). The generated summary text is again subjected to clustering. This process is iteratively performed for a predetermined number of layers. The outcome of this iterative process is a bottom-up hierarchical tree structure, wherein each node signifies a cluster of related text chunks. RAPTOR uses SBERT embeddings for clustering.</td>
 </tr></tbody>
 
+
 <tbody><tr style="background:#f4f4f4">
     <td scope="row" class='align-middle text-center'>2<br>
+      <span class="badge badge-secondary">2024/01</span></td>
+    <td class='align-middle text-left'>Baseline model: Long-context GPT-3.5 (gpt-3.5-turbo-16k) as of January 2024<br/>
+      <span class="affiliation">Anonymous</span><br/></td>
+    <td class='align-middle text-center'><button data-id="000014" type="submit" class="display-description";>description</button></td>
+    <td class='align-middle text-center'></td>
+    <td class='align-middle text-center'></td>
+    <td class='align-middle text-center'><strong>74.7</strong></td>
+    <td class='align-middle text-center'><strong>64.3</strong></td>
+    <td class='align-middle text-center'><strong>66.2</strong></td>
+    <td class='align-middle text-center'><strong>52.4</strong></td>
+</tr>
+<tr id="000014" style="display:none;" class="section" >
+<td colspan="8" style="font-size:13px"> Model description: This entry is submitted anonymously. The numbers reflect the zero-shot performance of gpt-3.5-turbo-16k as of January 2024, but the specific prompt used is unclear. </td>
+</tr></tbody>
+
+<tbody><tr style="background:#f4f4f4">
+    <td scope="row" class='align-middle text-center'>4<br>
       <span class="badge badge-secondary">2023/10</span></td>
     <td class='align-middle text-left'>LongMA: Fine-Tuning TechGPT-7B using QLoRA on QuALITY and RACE subset<br/>
-      <span class="affiliation">Northeastern University</span><br/></td>
+      <span class="affiliation">Qi Ma, Northeastern University</span><br/></td>
     <td class='align-middle text-center'><button data-id="000013" type="submit" class="display-description";>description</button></td>
     <td class='align-middle text-center'></td>
     <td class='align-middle text-center'></td>
@@ -231,7 +249,7 @@
 </tr></tbody>
 
 <tbody><tr style="background:#f4f4f4">
-    <td scope="row" class='align-middle text-center'>3<br>
+    <td scope="row" class='align-middle text-center'>5<br>
       <span class="badge badge-secondary">2022/05</span></td>
     <td class='align-middle text-left'>CoLISA: DPR & DeBERTaV3-large architecture plus contrastive learning & in-sample attention<br/>
       <span class="affiliation">SUDA NLP & I2R at Soochow University</span><br/></td>
@@ -248,7 +266,7 @@
 </tr></tbody>
 
 <tbody><tr style="background:#f4f4f4">
-    <td scope="row" class='align-middle text-center'>4<br>
+    <td scope="row" class='align-middle text-center'>6<br>
       <span class="badge badge-secondary">2022/04</span></td>
     <td class='align-middle text-left'>CoLISA: DPR & DeBERTaV3-large architecture & contrastive learning<br/>
       <span class="affiliation">SUDA NLP & I2R at Soochow University</span><br/></td>
@@ -265,7 +283,7 @@
 </tr></tbody>
 
 <tbody><tr style="background:#f4f4f4">
-    <td scope="row" class='align-middle text-center'>5<br>
+    <td scope="row" class='align-middle text-center'>7<br>
       <span class="badge badge-secondary">2021/12</span></td>
     <td class='align-middle text-left'>Baseline model: DPR retrieval using questions & DeBERTaV3-large with intermediate training on RACE<br/>
       <span class="affiliation">New York University</span><br/></td>
@@ -282,7 +300,7 @@
 </tr></tbody>
 
 <tbody><tr style="background:#f4f4f4">
-    <td scope="row" class='align-middle text-center'>6<br>
+    <td scope="row" class='align-middle text-center'>8<br>
       <span class="badge badge-secondary">2021/12</span></td>
     <td class='align-middle text-left'>Baseline model: DPR retrieval using questions & RoBERTa-large with intermediate training on RACE<br/>
       <span class="affiliation">New York University</span><br/></td>
@@ -299,7 +317,7 @@
 </tr></tbody>
 
 <tbody><tr style="background:#f4f4f4">
-    <td scope="row" class='align-middle text-center'>7<br>
+    <td scope="row" class='align-middle text-center'>9<br>
       <span class="badge badge-secondary">2021/12</span></td>
     <td class='align-middle text-left'>Baseline model: DPR retrieval using questions & DeBERTaV3-large <br/>
       <span class="affiliation">New York University</span><br/></td>
@@ -316,7 +334,7 @@
 </tr></tbody>
 
 <tbody><tr style="background:#f4f4f4">
-    <td scope="row" class='align-middle text-center'>8<br>
+    <td scope="row" class='align-middle text-center'>10<br>
       <span class="badge badge-secondary">2021/12</span></td>
     <td class='align-middle text-left'>Question-only baseline: DeBERTaV3-large with intermediate training on RACE<br/>
       <span class="affiliation">New York University</span><br/></td>
@@ -333,7 +351,7 @@
 </tr></tbody>
 
 <tbody><tr style="background:#f4f4f4">
-    <td scope="row" class='align-middle text-center'>9<br>
+    <td scope="row" class='align-middle text-center'>11<br>
       <span class="badge badge-secondary">2021/12</span></td>
     <td class='align-middle text-left'>Baseline model: fastText retrieval using questions & RoBERTa-large<br/>
       <span class="affiliation">New York University</span><br/></td>
@@ -350,7 +368,7 @@
 </tr></tbody>
 
 <tbody><tr style="background:#f4f4f4">
-    <td scope="row" class='align-middle text-center'>10<br>
+    <td scope="row" class='align-middle text-center'>12<br>
       <span class="badge badge-secondary">2021/12</span></td>
     <td class='align-middle text-left'>Question-only baseline: DeBERTaV3-large<br/>
       <span class="affiliation">New York University</span><br/></td>
@@ -367,7 +385,7 @@
 </tr></tbody>
 
 <tbody><tr style="background:#f4f4f4">
-    <td scope="row" class='align-middle text-center'>11<br>
+    <td scope="row" class='align-middle text-center'>13<br>
       <span class="badge badge-secondary">2021/12</span></td>
     <td class='align-middle text-left'>Baseline model: Longformer with intermediate training on RACE<br/>
       <span class="affiliation">New York University</span><br/></td>
@@ -384,7 +402,24 @@
 </tr></tbody>
 
 <tbody><tr style="background:#f4f4f4">
-    <td scope="row" class='align-middle text-center'>12<br>
+    <td scope="row" class='align-middle text-center'>14<br>
+      <span class="badge badge-secondary">2024/01</span></td>
+    <td class='align-middle text-left'>Baseline model: Vicuna-7B<br/>
+      <span class="affiliation">Anonymous</span><br/></td>
+    <td class='align-middle text-center'><button data-id="000015" type="submit" class="display-description";>description</button></td>
+    <td class='align-middle text-center'></td>
+    <td class='align-middle text-center'></td>
+    <td class='align-middle text-center'><strong>39.1</strong></td>
+    <td class='align-middle text-center'><strong>33.9</strong></td>
+    <td class='align-middle text-center'><strong>18.8</strong></td>
+    <td class='align-middle text-center'><strong>11.9</strong></td>
+</tr>
+<tr id="000015" style="display:none;" class="section" >
+<td colspan="8" style="font-size:13px"> Model description: This entry is submitted anonymously. The numbers reflect the zero-shot performance of Vicuna-7B as of January 2024, but the specific prompt used is unclear. </td>
+</tr></tbody>
+
+<tbody><tr style="background:#f4f4f4">
+    <td scope="row" class='align-middle text-center'>15<br>
       <span class="badge badge-secondary">2021/12</span></td>
     <td class='align-middle text-left'>Baseline model: Longformer<br/>
       <span class="affiliation">New York University</span><br/></td>
